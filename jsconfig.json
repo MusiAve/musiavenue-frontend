@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"baseUrl": "app",
+		"jsx": "react-jsx",
+		"target": "ES5"
+	},
+	"include": ["./app"],
+	"exclude": ["node_modules", "**/node_modules/*", "build"],
+	"allowJs": true
+}
