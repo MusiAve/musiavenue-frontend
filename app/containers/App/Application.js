@@ -22,7 +22,7 @@ function Application(props) {
 
   // const { isAuthenticated } = props;
 
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {

@@ -1,14 +1,22 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@mui/styles';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
+import styles from 'global-styles';
+import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
+import { MuiBox } from 'components';
 
 function DashboardLayout(props) {
 
-  const { childrens, ...restProps } = props;
+  const { childrens, classes, ...restProps } = props;
 
   return (
-    <Fragment>
-      DashboardLayout
+    <MuiBox className={classes.headerFooterLayoutMainWrap}>
+      <TopHeader />
+      <MiddleHeader />
+      <BottomHeader />
+
       <Switch>
         {Map(childrens, (route, index) => {
           return (
@@ -23,8 +31,12 @@ function DashboardLayout(props) {
           );
         })}
       </Switch>
-    </Fragment>
+    </MuiBox>
   );
 }
 
-export default DashboardLayout;
+DashboardLayout.propTypes = {
+  classes: PropTypes.any,
+};
+
+export default withStyles(styles)(DashboardLayout);
