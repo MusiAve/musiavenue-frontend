@@ -22,7 +22,7 @@ function Application(props) {
 
   // const { isAuthenticated } = props;
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -33,7 +33,7 @@ function Application(props) {
     <Fragment>
       <BrowserRouter>
         <Switch>
-          {isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
+          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
             return (
               <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
                 return (
@@ -43,7 +43,7 @@ function Application(props) {
               />
             );
           })}
-          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
+          {!isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
             return (
               <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
                 return (
