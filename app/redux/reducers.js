@@ -6,10 +6,7 @@ import { combineReducers } from 'redux-immutable';
 import { connectRouter } from 'connected-react-router/immutable';
 import history from 'utils/history';
 
-import languageProviderReducer from 'containers/LanguageProvider/reducer';
 import login from './modules/login';
-import uiReducer from './modules/ui';
-import initval from './modules/initForm';
 
 /**
  * Creates the main reducer with the dynamically injected ones
@@ -18,9 +15,9 @@ export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     // form,
     login,
-    ui: uiReducer,
-    initval,
-    language: languageProviderReducer,
+    // ui: uiReducer,
+    // initval,
+    // language: languageProviderReducer,
     router: connectRouter(history),
     ...injectedReducers,
   });

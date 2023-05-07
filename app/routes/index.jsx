@@ -8,31 +8,31 @@ const RegisterView = loadable(() => import('../views/Auth/Register/RegisterView'
 
 // DASHBOARD ROUTES
 const DashBoardView = loadable(() => import('../views/DashBoard/DashBoard/DashBoardView'));
+const HomeView = loadable(() => import('../views/DashBoard/HomeView/HomeView'));
 
 export const ROUTES = [
     {
         path: '',
-        verified: false,
         auth: false,
         exact: true,
         name: 'Auth',
         component: AuthLayout,
         childrens: [
+            { path: '/', exact: true, name: 'Login', component: HomeView },
             { path: '/login', exact: true, name: 'Login', component: LoginView },
             { path: '/register', exact: true, name: 'Register', component: RegisterView, },
-            { path: '', redirect: '/login', component: Component }
+            { path: '', redirect: '/', component: Component }
         ],
     },
     {
         path: '',
         exact: true,
         auth: true,
-        verified: false,
         name: 'Dashboard',
         component: DashboardLayout,
         childrens: [
             { path: '/dashboard', exact: true, name: 'Dashboard', component: DashBoardView },
-            { path: '', redirect: '/dashboard', component: Component },
+            { path: '', redirect: '/', component: Component },
         ],
     },
 ];

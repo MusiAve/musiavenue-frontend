@@ -9,7 +9,6 @@
 
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Filter, Map, Toast } from 'helpers';
 import { withStyles } from '@mui/styles';
 import styles from 'global-styles';
@@ -20,9 +19,7 @@ import { ROUTES } from 'routes';
 
 function Application(props) {
 
-  // const { isAuthenticated } = props;
-
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -59,4 +56,13 @@ function Application(props) {
   );
 }
 
-export default withStyles(styles)(Application);
+const reducer = 'login'
+const mapStateToProps = (state) => {
+  return {
+    user: state.getIn([reducer, 'usersLogin'])
+  }
+}
+
+const mappedApplication = connect(mapStateToProps)(Application)
+
+export default withStyles(styles)(mappedApplication);

@@ -5,13 +5,17 @@ import styles from 'global-styles';
 import { MuiBox } from 'components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
+import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
 
 function AuthLayout(props) {
 
   const { childrens, classes, ...restProps } = props;
 
   return (
-    <MuiBox>
+    <MuiBox className={classes.headerFooterLayoutMainWrap}>
+      <TopHeader />
+      <MiddleHeader />
+      <BottomHeader />
       <Switch>
         {Map(childrens, (route, index) => {
           return (

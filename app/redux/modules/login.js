@@ -5,7 +5,8 @@ const initialState = {
   usersLogin: Map({
     email: 'johndoe@mail.com',
     password: '12345678',
-    remember: false
+    remember: false,
+    userType: 2,
   })
 };
 const initialImmutableState = fromJS(initialState);
