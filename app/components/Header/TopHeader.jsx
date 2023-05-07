@@ -1,10 +1,17 @@
 import React from 'react';
-import { MuiBox } from 'components';
+import { MuiBox, MuiLink } from 'components';
 
 function TopHeader() {
     return (
-        <MuiBox>
-            TopHeader
+        <MuiBox className='topHeaderMainWrap'>
+            <MuiBox>
+                <MuiLink to='#'>About Us</MuiLink>
+                <MuiLink to='#'>Contact</MuiLink>
+                <MuiLink to='#'>Order Support</MuiLink>
+                <MuiLink to='#'>Store Locator</MuiLink>
+            </MuiBox>
+            <MuiBox></MuiBox>
+            <MuiBox></MuiBox>
         </MuiBox>
     )
 }
