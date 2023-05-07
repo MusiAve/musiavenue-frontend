@@ -37,7 +37,7 @@ app.use('/api/docs', (req, res) => {
 });
 
 app.use('/', express.static('public', { etag: false }));
-app.use(favicon(path.join('public', 'favicons', 'favicon.ico')));
+app.use(favicon(path.join('public', 'favicons', 'favicon.png')));
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {

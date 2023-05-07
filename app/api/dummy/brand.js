@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'Custom Theme',
-  desc: 'Custom Theme - React Website Template',
-  prefix: 'custom_theme',
-  footerText: 'Custom Theme All Rights Reserved 2018',
-  logoText: 'Custom Theme',
+  name: 'Musician Avenue',
+  desc: 'Musician Avenue - React Website Template',
+  prefix: 'musician_avenue',
+  footerText: 'Musician Avenue All Rights Reserved 2018',
+  logoText: 'Musician Avenue',
 };
