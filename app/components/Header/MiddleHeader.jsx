@@ -1,6 +1,7 @@
 import React from 'react';
-import { MuiBox, MuiLink, MuiTypography } from 'components';
+import { MuiBadge, MuiBox, MuiLink, MuiTypography } from 'components';
 import Logo from 'images/logo.png';
+import { FavoriteBorderOutlinedIcon, PersonOutlineOutlinedIcon, ShoppingBasketOutlinedIcon } from 'helpers/Icons';
 
 function MiddleHeader() {
     return (
@@ -16,9 +17,20 @@ function MiddleHeader() {
                 </MuiTypography>
             </MuiBox>
             <MuiBox className='middleHeaderRight'>
-                <MuiTypography>
-                    We're here to help! Call Us Now: <MuiBox component='span'>(02) 9755 9999</MuiBox>
-                </MuiTypography>
+                <MuiBox className="rightCircle" sx={{ background: '#E8F8F7' }}>
+                    <PersonOutlineOutlinedIcon />
+                </MuiBox>
+                <MuiBox className="rightCircle" sx={{ background: '#F5F3E4' }}>
+                    <MuiBadge badgeContent={1} showZero>
+                        <FavoriteBorderOutlinedIcon />
+                    </MuiBadge>
+                </MuiBox>
+                <MuiBox className="rightCircle" sx={{ background: '#F3E5DE' }}>
+                    <MuiBadge badgeContent={1} showZero>
+                        <ShoppingBasketOutlinedIcon />
+                    </MuiBadge>
+                </MuiBox>
+                <MuiTypography>$0.00</MuiTypography>
             </MuiBox>
         </MuiBox>
     )

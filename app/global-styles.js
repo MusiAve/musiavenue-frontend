@@ -51,6 +51,32 @@ const styles = () => createStyles({
         color: Theme.palette.primary.contrastText,
         cursor: 'pointer',
       },
+      '& .middleHeaderRight': {
+        display: 'flex',
+        gap: 15,
+        alignItems: 'center',
+        '& .rightCircle': {
+          width: 40,
+          height: 40,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          '& svg': {
+            fontSize: '24px',
+            color: '#AB79AE'
+          },
+          '& .MuiBadge-standard': {
+            top: '-5px',
+            right: '-5px',
+            background: '#E1B079',
+            color: '#fff'
+          },
+        },
+        '& p': {
+          fontWeight: 700
+        },
+      }
     },
     // **** end middle header css ****
 
@@ -74,15 +100,21 @@ const styles = () => createStyles({
       },
     },
     // **** end bottom header css ****
+    // **** start home view css ****
+    '& .homeViewMainWrap': {
+      '& .sliderMainWrap': {
+        height: '650px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'red',
+      }
+    }
+
+    // **** end home view css ****
 
 
   }
-
-
-
-
-
-
 });
 
 export default styles;

@@ -52,6 +52,9 @@ import {
   Logout as LogoutIcon,
   InfoOutlined as InfoIcon,
   Check as CheckIcon,
+  PersonOutlineOutlined as PersonOutlineOutlinedIcon,
+  FavoriteBorderOutlined as FavoriteBorderOutlinedIcon,
+  ShoppingBasketOutlined as ShoppingBasketOutlinedIcon
 } from '@mui/icons-material';
 
 export {
@@ -107,5 +110,8 @@ export {
   TaskIcon,
   BoardViewIcon,
   MoreHorizIcon,
-  LogoutIcon
+  LogoutIcon,
+  PersonOutlineOutlinedIcon,
+  FavoriteBorderOutlinedIcon,
+  ShoppingBasketOutlinedIcon
 };
