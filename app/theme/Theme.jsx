@@ -13,17 +13,16 @@ const breakpoints = {
 const Theme = createTheme({
   palette: {
     primary: {
-      light: '#ffcecb', // light
-      main: '#3f30ff', // Main
-      // main: '#00fcb8', // Main
-      dark: '#0f00e1', // Dark
-      contrastText: '#fff',
+      light: '#fdf7ee', // light pink
+      main: '#850089', // Violet
+      dark: '#000', // black
+      contrastText: '#fff', // white
     },
     secondary: {
-      light: '#c4c4c424', // light grey bg
-      main: '#000000b8', // medium grey para
+      light: '#419cff', // logo
+      main: '#ed0193', // pink
       dark: '#000', // black
-      contrastText: '#9D9B95', // light para
+      contrastText: '#5b5b5a', // light para
     },
     error: {
       light: '#d32f2f', // light red
@@ -36,23 +35,6 @@ const Theme = createTheme({
       main: '#2e7d32', // Main green
       dark: '#1b5e20', // orange
     },
-    info: {
-      light: '#3f30ff2b', // transparent light blue
-      main: '#4D4949', // btn grey bg color
-      contrastText: '#9D9B95', // list secondary grey color
-    },
-    grey: {
-      50: '#F8F9FD',
-      100: '#c4c4c424',
-      200: '#c4c4c42e',
-      300: '#9D9B95',
-      400: '#0000008a',
-      500: '#3E3A37',
-      600: '#0000009e',
-      700: '#5A5B5F',
-      800: '#00000021',
-      A100: '#BDBABA', // sidebar link color
-    },
   },
   typography: {
     h1: {
@@ -64,7 +46,7 @@ const Theme = createTheme({
         fontSize: '45px',
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '25px',
+        fontSize: 25,
       },
     },
     h2: {
@@ -76,96 +58,97 @@ const Theme = createTheme({
         fontSize: '38px',
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '20px',
+        fontSize: 20,
       },
     },
     h3: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '25px',
+      fontSize: 25,
       fontWeight: 600,
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
         fontSize: '30px',
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '20px',
+        fontSize: 20,
       },
     },
     h4: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '20px',
+      fontSize: 20,
       fontWeight: 600,
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '25px',
+        fontSize: 25,
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     h5: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '20px',
+      fontSize: 20,
       fontWeight: 600,
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     h6: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '16px',
+      fontSize: 16,
       fontWeight: 600,
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     body1: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '18px',
+      fontSize: 18,
       display: 'block',
       color: '#9D9B95',
       fontWeight: 300,
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '20px',
+        fontSize: 20,
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '16px',
+        fontSize: 16,
       },
     },
     subtitle1: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '22px',
+      fontSize: 22,
       display: 'block',
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '25px',
+        fontSize: 25,
       },
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     subtitle2: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '16px',
+      fontSize: 16,
       display: 'block',
       fontWeight: 300,
+      color: '#5b5b5a',
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     caption: {
       textTransform: 'inherit',
       fontFamily: 'Poppins, sans-serif',
-      fontSize: '16px',
+      fontSize: 16,
       display: 'block',
       color: '#9D9B95',
       fontWeight: 300,
       [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-        fontSize: '18px',
+        fontSize: 18,
       },
     },
     fontFamily: ['Poppins', 'Lato', 'Montserrat', 'sans-serif'].join(','),
@@ -222,13 +205,13 @@ const Theme = createTheme({
           py: 1,
           fontWeight: 500,
           fontFamily: 'Poppins, sans-serif !important',
-          fontSize: '18px',
+          fontSize: 18,
           textTransform: 'inherit !important',
           [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-            fontSize: '20px',
+            fontSize: 20,
           },
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
-            fontSize: '16px',
+            fontSize: 16,
             px: 1.5,
           },
         },
@@ -243,17 +226,17 @@ const Theme = createTheme({
         color: 'secondary.dark',
         sx: {
           fontFamily: 'Poppins, sans-serif !important',
-          fontSize: '16px',
+          fontSize: 16,
           transition: '0.5s',
           '&:hover': {
             color: 'primary.dark',
             transition: '0.5s',
           },
           [`@media screen and (min-width: ${breakpoints.values.xl}px)`]: {
-            fontSize: '20px',
+            fontSize: 20,
           },
           [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-            fontSize: '16px',
+            fontSize: 16,
           },
         },
       },

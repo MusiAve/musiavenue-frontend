@@ -1,8 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { MuiBox, MuiLink, MuiTypography } from 'components';
 
 function BottomHeader() {
     return (
-        <div>BottomHeader</div>
+        <MuiBox className='bottomHeaderMainWrap'>
+            <MuiLink to='#'>Guiter/Bass</MuiLink>
+            <MuiLink to='#'>Keyboard/Pianos</MuiLink>
+            <MuiLink to='#'>AMPS/effects</MuiLink>
+            <MuiLink to='#'>Live sound</MuiLink>
+            <MuiLink to='#'>Recording studio</MuiLink>
+            <MuiLink to='#'>DJ/Lighting</MuiLink>
+            <MuiLink to='#'>Drums/Percussion</MuiLink>
+            <MuiLink to='#'>Orchestal</MuiLink>
+            <MuiLink to='#'>Accessories</MuiLink>
+            <MuiLink to='#'>Shop by brand</MuiLink>
+        </MuiBox>
     )
 }
 

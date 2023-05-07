@@ -2,20 +2,16 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@mui/styles';
 import styles from 'global-styles';
-import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
 import { MuiBox } from 'components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
 
-export default function AuthLayout(props) {
+function AuthLayout(props) {
 
-  const { childrens, ...restProps } = props;
+  const { childrens, classes, ...restProps } = props;
 
   return (
     <MuiBox>
-      <TopHeader />
-      <MiddleHeader />
-      <BottomHeader />
       <Switch>
         {Map(childrens, (route, index) => {
           return (
@@ -34,8 +30,8 @@ export default function AuthLayout(props) {
   );
 }
 
-// AuthLayout.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
+AuthLayout.propTypes = {
+  classes: PropTypes.any,
+};
 
-// export default withStyles(styles)(AuthLayout);
+export default withStyles(styles)(AuthLayout);
