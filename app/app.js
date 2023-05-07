@@ -25,7 +25,7 @@ import LanguageProvider from 'containers/LanguageProvider';
 // Load the favicon and the .htaccess file
 // Load the favicon and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
-import '!file-loader?name=[name].[ext]!../public/favicons/favicon.ico'; // eslint-disable-line
+import '!file-loader?name=[name].[ext]!../public/favicons/favicon.png'; // eslint-disable-line
 import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line
 /* eslint-enable import/no-unresolved, import/extensions */
 
