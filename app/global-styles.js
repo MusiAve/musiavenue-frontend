@@ -107,7 +107,27 @@ const styles = () => createStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'red',
+      },
+      '& .userCardSectionWrap': {
+        padding: '20px',
+        justifyContent: 'space-between',
+        "& div": {
+          height: '450px',
+          flex: '0 1 23%',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'center'
+        }
+      },
+      '& .paymentOptionsWrap': {
+        padding: 20,
+        justifyContent: 'space-between',
+        "& div": {
+          height: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
       }
     }
 

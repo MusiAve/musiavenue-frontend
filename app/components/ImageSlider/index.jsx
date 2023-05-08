@@ -1,33 +1,25 @@
 import { MuiBox } from 'components';
-import { Map } from 'helpers';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react'
 
 function MuiImageSlider(props) {
-    const { height = '100%', width = '100%', images } = props;
+    const { height = '650px', width = '100%', images } = props;
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const nextSlide = () => {
-        setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
+        setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
     };
 
-    setTimeout(() => {
-        nextSlide();
-    }, 3000);
+    useEffect(() => {
+        const increaseSlide = setTimeout(() => {
+            nextSlide();
+        }, 2000);
 
-    const slideStyle = {
-        opacity: 0,
-        transitionDuration: '1s ease',
-    }
+        return () => clearTimeout(increaseSlide)
 
-    const slideActive = {
-        opacity: 1,
-        transitionDuration: '1s',
-        transform: 'scale(1.08)',
-    }
+    }, [currentSlide])
 
-    console.log('currentSlide', currentSlide);
 
     return (
         <MuiBox
@@ -36,19 +28,13 @@ function MuiImageSlider(props) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: width,
-                height: height
+                height: height,
+                backgroundImage: `url(${images[currentSlide]})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transition: '400ms ease-in-out',
             }}
-        >
-            {
-                images.length > 0 && Map(images, (image, imgIndex) => (
-                    <img
-                        style={{ height, width }}
-                        key={imgIndex}
-                        src={image}
-                    />
-                ))
-            }
-        </MuiBox>
+        />
     )
 }
 
