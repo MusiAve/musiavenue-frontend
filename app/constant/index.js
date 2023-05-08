@@ -44,4 +44,55 @@ const PRICING_METHODS_CARD = [
     }
 ]
 
-export { IMAGE_FILE_TYPES, SLIDER_IMAGES, CARD_DATA, PRICING_METHODS_CARD };
+const FEATURED_PRODUCTS = [
+    {
+        id: 1,
+        name: 'Marshall Code 50 Guitar Amplifier',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 2,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 3,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 4,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 5,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 6,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 7,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+    {
+        id: 8,
+        name: 'Yamaha P-45B Digital Piano',
+        price: '699.00',
+        image: 'https://i.pinimg.com/originals/ae/3c/1b/ae3c1b75f8f662920bc0872b972e7627.png'
+    },
+]
+
+export { IMAGE_FILE_TYPES, SLIDER_IMAGES, CARD_DATA, PRICING_METHODS_CARD, FEATURED_PRODUCTS };

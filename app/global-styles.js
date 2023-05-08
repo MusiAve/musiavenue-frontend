@@ -122,11 +122,72 @@ const styles = () => createStyles({
       '& .paymentOptionsWrap': {
         padding: 20,
         justifyContent: 'space-between',
-        "& div": {
+        "& .pricingMethodCard": {
           height: '400px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          flexDirection: 'column',
+          '& .pricingContentBox': {
+            textAlign: 'center',
+            width: 400,
+            marginTop: 30,
+            '& h2': {
+              width: 270,
+              margin: '0 auto',
+              fontWeight: 900,
+              color: ' #000',
+              fontSize: '22px',
+            },
+            '& span': {
+              color: '#666161',
+              fontSize: 18,
+              marginTop: 20,
+              fontWeight: 500,
+            }
+          }
+        }
+      },
+      '& .featuredProductMainWrap': {
+        '& .featureSingleProduct': {
+          height: '520px',
+          maxWidth: '400px',
+          minWidth: '380px',
+          margin: '10px 0',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          padding: '10px',
+          border: '1px solid transparent',
+          cursor: 'pointer',
+          '& .productImageContainer': {
+            width: '100%',
+            textAlign: 'center',
+            padding: '20px',
+            marginBottom: '10px',
+            '& img': {
+              width: 'auto',
+              height: '280px',
+              margin: '0 auto'
+            },
+          },
+          '& button': {
+            fontSize: '16px',
+          },
+          '&:hover': {
+            border: '1px solid #850089',
+            transition: '300ms ease-in',
+            '& .productImageContainer': {
+              transition: '300ms ease-in',
+              background: '#F2F2F2',
+            },
+            '& button': {
+              background: '#850089',
+              transition: '200ms ease-in',
+              color: '#fff'
+            },
+          }
         }
       }
     }
