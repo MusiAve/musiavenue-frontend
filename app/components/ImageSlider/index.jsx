@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react'
 
 function MuiImageSlider(props) {
-    const { height = '650px', width = '100%', images } = props;
+    const { height = 'calc(100vh - 200px)', width = '100%', images } = props;
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -14,7 +14,7 @@ function MuiImageSlider(props) {
     useEffect(() => {
         const increaseSlide = setTimeout(() => {
             nextSlide();
-        }, 2000);
+        }, 5000);
 
         return () => clearTimeout(increaseSlide)
 

@@ -21,7 +21,7 @@ const Theme = createTheme({
     secondary: {
       light: '#419cff', // logo
       main: '#ed0193', // pink
-      dark: '#000', // black
+      dark: '#F2F2F2', // light grey bg
       contrastText: '#5b5b5a', // light para
     },
     error: {
