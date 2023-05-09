@@ -1,0 +1,11 @@
+{
+  "name": "Musician Frontend",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "density": "0.75"
+    },
+  ]
+}
