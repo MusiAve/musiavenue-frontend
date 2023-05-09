@@ -1,15 +1,16 @@
 import React from 'react';
 import { MuiBox, MuiLink, MuiTypography } from 'components';
 import Theme from 'theme/Theme';
+import { Link } from 'react-router-dom';
 
 function TopHeader() {
     return (
         <MuiBox className='topHeaderMainWrap'>
             <MuiBox className='topHeaderLeft'>
-                <MuiLink to='#' variant="subtitle2">About Us</MuiLink>
-                <MuiLink to='#' variant="subtitle2">Contact</MuiLink>
-                <MuiLink to='#' variant="subtitle2">Order Support</MuiLink>
-                <MuiLink to='#' variant="subtitle2">Store Locator</MuiLink>
+                <MuiLink component={Link} to='/about-us' variant="subtitle2">About Us</MuiLink>
+                <MuiLink component={Link} to='#' variant="subtitle2">Contact</MuiLink>
+                <MuiLink component={Link} to='#' variant="subtitle2">Order Support</MuiLink>
+                <MuiLink component={Link} to='#' variant="subtitle2">Store Locator</MuiLink>
             </MuiBox>
             <MuiBox className='topHeaderCenter'>
                 <MuiTypography variant='subtitle2' style={{ textTransform: 'uppercase' }}>

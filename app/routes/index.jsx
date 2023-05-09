@@ -9,6 +9,7 @@ const RegisterView = loadable(() => import('../views/Auth/Register/RegisterView'
 // DASHBOARD ROUTES
 const DashBoardView = loadable(() => import('../views/DashBoard/DashBoard/DashBoardView'));
 const HomeView = loadable(() => import('../views/DashBoard/HomeView/HomeView'));
+const AboutUsView = loadable(() => import('../views/DashBoard/AboutUs/AboutUsView'));
 
 export const ROUTES = [
     {
@@ -21,6 +22,7 @@ export const ROUTES = [
             { path: '/', exact: true, name: 'Home', component: HomeView },
             { path: '/login', exact: true, name: 'Login', component: LoginView },
             { path: '/register', exact: true, name: 'Register', component: RegisterView, },
+            { path: '/about-us', exact: true, name: 'About Us', component: AboutUsView, },
             { path: '', redirect: '/', component: Component }
         ],
     },

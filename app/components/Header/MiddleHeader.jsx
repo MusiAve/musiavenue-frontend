@@ -5,6 +5,7 @@ import { FavoriteBorderOutlinedIcon, PersonOutlineOutlinedIcon, SearchIcon, Shop
 import MuiInputField from 'components/Input';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function MiddleHeader(props) {
 
@@ -30,7 +31,7 @@ function MiddleHeader(props) {
     return (
         <MuiBox className='middleHeaderMainWrap'>
             <MuiBox className='middleHeaderLeft'>
-                <MuiLink onClick={() => history.push('/')}>
+                <MuiLink component={Link} to='/'>
                     <img src={Logo} />
                 </MuiLink>
             </MuiBox>
