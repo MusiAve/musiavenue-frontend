@@ -1,11 +1,12 @@
 import React from 'react'
-import { MuiBox, MuiButton, MuiGrid, MuiTypography } from 'components';
+import { MuiBox, MuiGrid, MuiTypography } from 'components';
 import MuiImageSlider from 'components/ImageSlider';
 import { CARD_DATA, FEATURED_PRODUCTS, PRICING_METHODS_CARD, SLIDER_IMAGES, TOP_DEALS, ARTICLE_RESOURCES } from 'constant';
 import { Map } from 'helpers';
 import MenFluteImg from '../../../images/menFlute.jpg';
 import GuiterBoxBg from '../../../images/guiterBoxBg.jpg';
 import InstrumentsShopBg from '../../../images/instrumentsShop.jpg';
+import MuiButton from 'components/Buttons';
 
 function HomeView(props) {
 

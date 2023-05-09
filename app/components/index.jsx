@@ -8,7 +8,6 @@ import {
   Link as MuiLink,
   List as MuiList,
   IconButton as MuiIconButton,
-  Button as MuiButton,
   Badge as MuiBadge,
   Menu as MuiMenu,
   MenuItem as MuiMenuItem,
@@ -60,7 +59,6 @@ import {
 
 export {
   // Header,
-  MuiButton,
   MuiTypography,
   MuiInputAdornment,
   MuiBox,

@@ -158,13 +158,33 @@ const styles = () => createStyles({
             top: '-5px',
             right: '-5px',
             background: '#E1B079',
-            color: '#fff'
+            color: Theme.palette.primary.contrastText
           },
         },
         '& p': {
           fontWeight: 700
         },
-      }
+      },
+      '& .middleHeaderCenter': {
+        width: '40%',
+        '& fieldset': {
+          border: `1px solid ${Theme.palette.primary.contrastText}`
+        },
+        '& input': {
+          color: Theme.palette.primary.contrastText,
+          "&::placeholder": {
+            color: `${Theme.palette.primary.contrastText} !important`,
+            fontWeight: 500
+          },
+        },
+        '& .MuiFormControl-root': {
+          marginBottom: 0
+        },
+        '& .MuiInputAdornment-root svg': {
+          color: '#c551c8',
+          fontSize: 30
+        }
+      },
     },
     // **** end middle header css ****
 

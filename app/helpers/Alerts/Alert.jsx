@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { MuiButton, MuiDiaLog, MuiDialogActions, MuiDialogContent, MuiDialogContentText, MuiDialogTitle } from 'components';
+import { MuiDiaLog, MuiDialogActions, MuiDialogContent, MuiDialogContentText, MuiDialogTitle } from 'components';
+import MuiButton from 'components/Buttons';
 
 const CustomAlert = (props) => {
 	const { title = '', description = '', giveAnswer, options = {} } = props;

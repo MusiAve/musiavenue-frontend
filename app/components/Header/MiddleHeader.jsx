@@ -1,7 +1,8 @@
 import React from 'react';
-import { MuiBadge, MuiBox, MuiLink, MuiTypography } from 'components';
+import { MuiBadge, MuiBox, MuiInputAdornment, MuiLink, MuiTypography } from 'components';
 import Logo from 'images/logo.png';
-import { FavoriteBorderOutlinedIcon, PersonOutlineOutlinedIcon, ShoppingBasketOutlinedIcon } from 'helpers/Icons';
+import { FavoriteBorderOutlinedIcon, PersonOutlineOutlinedIcon, SearchIcon, ShoppingBasketOutlinedIcon } from 'helpers/Icons';
+import MuiInputField from 'components/Input';
 
 function MiddleHeader() {
     return (
@@ -12,9 +13,17 @@ function MiddleHeader() {
                 </MuiLink>
             </MuiBox>
             <MuiBox className='middleHeaderCenter'>
-                <MuiTypography>
-                    Free australia wide shipping on order above <MuiBox component='span'>$49</MuiBox>
-                </MuiTypography>
+                <MuiInputField
+                    name='searchProduct'
+                    placeholder='Search for a Product here...'
+                    InputProps={{
+                        endAdornment: (
+                            <MuiInputAdornment position='end'>
+                                <SearchIcon />
+                            </MuiInputAdornment>
+                        ),
+                    }}
+                />
             </MuiBox>
             <MuiBox className='middleHeaderRight'>
                 <MuiBox className="rightCircle" sx={{ background: '#E8F8F7' }}>
