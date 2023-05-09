@@ -144,6 +144,7 @@ const styles = () => createStyles({
         gap: 15,
         alignItems: 'center',
         '& .rightCircle': {
+          cursor: 'pointer',
           width: 40,
           height: 40,
           borderRadius: '50%',

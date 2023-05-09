@@ -30,17 +30,7 @@ function Application(props) {
     <Fragment>
       <BrowserRouter>
         <Switch>
-          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
-            return (
-              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
-                return (
-                  <route.component {...props} {...rProps} childrens={route.childrens} />
-                );
-              }}
-              />
-            );
-          })}
-          {!isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
+          {Map(ROUTES, (route, index) => {
             return (
               <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
                 return (
