@@ -5,6 +5,7 @@ import { AuthLayout, DashboardLayout } from 'layouts';
 // AUTH ROUTES
 const LoginView = loadable(() => import('../views/Auth/Login/LoginView'));
 const RegisterView = loadable(() => import('../views/Auth/Register/RegisterView'));
+const ForgetPasswordView = loadable(() => import('../views/Auth/ForgetPassword/ForgetPasswordView'));
 
 // DASHBOARD ROUTES
 const DashBoardView = loadable(() => import('../views/DashBoard/DashBoard/DashBoardView'));
@@ -22,6 +23,7 @@ export const ROUTES = [
             { path: '/', exact: true, name: 'Home', component: HomeView },
             { path: '/login', exact: true, name: 'Login', component: LoginView },
             { path: '/register', exact: true, name: 'Register', component: RegisterView, },
+            { path: '/forget-password', exact: true, name: 'Register', component: ForgetPasswordView, },
             { path: '/about-us', exact: true, name: 'About Us', component: AboutUsView, },
             { path: '', redirect: '/', component: Component }
         ],

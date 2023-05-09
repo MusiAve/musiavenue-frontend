@@ -5,13 +5,13 @@ import MuiInputField from 'components/Input';
 import MuiPassowrdField from 'components/PasswordInput';
 import MuiButton from 'components/Buttons';
 
-function LoginView() {
+function ForgetPasswordView() {
     return (
         <MuiBox className='authPageMainWrap'>
             <MuiBox className='authPageCntntWrap'>
                 <MuiGrid container spacing={2}>
                     <MuiGrid item xs={12} style={{ paddingTop: 0 }}>
-                        <MuiTypography variant='h5' className='formTitle' align='center'>Login your account</MuiTypography>
+                        <MuiTypography variant='h5' className='formTitle' align='center'>Reset Your Password</MuiTypography>
                     </MuiGrid>
                     <MuiGrid item xs={12} mb={1}>
                         <MuiBox className='fieldMainWrap'>
@@ -25,17 +25,18 @@ function LoginView() {
                             <MuiPassowrdField name='password' placeholder='Password' />
                         </MuiBox>
                     </MuiGrid>
-                    <MuiGrid item xs={12}>
-                        <MuiTypography className='formTextLinkWrap' align='right'>
-                            <MuiLink to='/forget-password' component={Link}>Forget password?</MuiLink>
-                        </MuiTypography>
+                    <MuiGrid item xs={12} mb={1}>
+                        <MuiBox className='fieldMainWrap'>
+                            <MuiBox component='label'>Confirm Password</MuiBox>
+                            <MuiPassowrdField name='confirmpPassword' placeholder='Confirm Password' />
+                        </MuiBox>
                     </MuiGrid>
                     <MuiGrid item xs={12} mb={1}>
                         <MuiButton className='primaryBtnWrap' fullWidth>SUBMIT</MuiButton>
                     </MuiGrid>
                     <MuiGrid item xs={12}>
                         <MuiTypography className='formTextLinkWrap' align='center'>
-                            Don’t have account? <MuiLink to='/register' component={Link}>Register</MuiLink>
+                            Already have an account? <MuiLink to='/login' component={Link}>Log in</MuiLink>
                         </MuiTypography>
                     </MuiGrid>
                 </MuiGrid>
@@ -44,4 +45,4 @@ function LoginView() {
     )
 }
 
-export default LoginView
+export default ForgetPasswordView

@@ -101,6 +101,44 @@ const styles = () => createStyles({
         },
       }
     },
+    '& .fieldMainWrap': {
+      '& label': {
+        fontSize: 15,
+        margin: '0 0 8px 5px',
+        display: 'block',
+      },
+      '& .MuiFormControl-root': {
+        marginBottom: 0,
+      },
+      '& .MuiInputBase-root': {
+        '& input': {
+          fontSize: 16,
+        },
+        '& fieldset': {
+          border: '1px solid #dedede',
+        },
+        '&:hover': {
+          '& input': {
+            fontSize: 16,
+          },
+          '& fieldset': {
+            border: '1px solid #dedede',
+          }
+        },
+        '&.Mui-focused': {
+          '& input': {
+            boxShadow: '0 0 10px #0000000d',
+          },
+          '& fieldset': {
+            border: '1px solid #dedede',
+            borderWidth: 1,
+          }
+        }
+      },
+    },
+    '& .greyTxt': {
+      color: `${Theme.palette.secondary.contrastText} !important`
+    },
     // **** end common css ****
 
     // **** start top header css ****
@@ -544,9 +582,60 @@ const styles = () => createStyles({
     '& .keyFeaturesMainWrap': {
       paddingLeft: '150px',
       paddingRight: '150px',
-    }
+    },
 
     // **** end home view css ****
+
+    // **** start auth page css ****
+
+    '& .authPageMainWrap': {
+      padding: '60px 20px',
+      backgroundColor: Theme.palette.secondary.dark,
+      minHeight: 'calc(100vh - 150px)',
+      '&.registerPageMainWrap': {
+        '& .authPageCntntWrap': {
+          maxWidth: 900,
+        },
+      },
+      '& .authPageCntntWrap': {
+        maxWidth: 550,
+        margin: '0 auto',
+        backgroundColor: Theme.palette.primary.contrastText,
+        padding: 30,
+        borderRadius: '8px',
+        border: '1px solid #c5c5c5',
+        boxShadow: '0 0 15px #0000001a',
+      },
+      '& .formTitle': {
+        fontWeight: 500,
+        marginBottom: 15,
+      },
+      '& .formTextLinkWrap': {
+        fontSize: 16,
+        color: Theme.palette.primary.dark,
+        fontWeight: 400,
+        '& a': {
+          color: Theme.palette.primary.main,
+          fontWeight: 500,
+          cursor: 'pointer',
+          '&:hover': {
+            color: Theme.palette.primary.dark,
+          }
+        }
+      },
+      '& .smallGreyTxt': {
+        color: '#898989',
+        fontSize: 15,
+        '& a': {
+          fontSize: 15,
+        }
+      },
+      '& .primaryBtnWrap': {
+        borderRadius: '5px'
+      }
+    },
+
+    // **** end auth page css ****
 
 
   }

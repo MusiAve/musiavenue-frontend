@@ -5,7 +5,14 @@ import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 const MuiCheckBox = (props) => {
   const { disabled, checked, label, ...restProps } = props;
   return (
-    <FormGroup>
+    <FormGroup sx={{
+      '& .MuiFormControlLabel-root': {
+        margin: '0 8px 0 0'
+      },
+      '& .MuiCheckbox-root': {
+        padding: 0,
+      }
+    }}>
       <FormControlLabel
         disabled={disabled}
         {...restProps}

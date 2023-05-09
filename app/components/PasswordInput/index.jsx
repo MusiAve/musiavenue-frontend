@@ -37,10 +37,8 @@ const MuiPasswordInput = (props) => {
       sx={[
         (theme) => ({
           marginBottom: '16px',
-          [theme.breakpoints.down('lg')]: {
-            '& .MuiInputBase-root': {
-              paddingRight: 0,
-            },
+          '& .MuiInputBase-root': {
+            paddingRight: 0,
           },
         }),
       ]}

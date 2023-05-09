@@ -211,6 +211,13 @@ const KEY_FEATURES = [
     { id: 1, featureHead: 'ONLINE CUSTOMER SERVICE', featureDesc: 'Call our expert for help creating your system.', icon: CustomerServiceImg },
 ]
 
+const COUNTRY = [
+    { label: 'India', value: 'india' },
+    { label: 'Australia', value: 'australia' },
+    { label: 'England', value: 'england' },
+    { label: 'South Africa', value: 'southAfrica' },
+]
+
 export {
     IMAGE_FILE_TYPES,
     SLIDER_IMAGES,
@@ -220,5 +227,6 @@ export {
     TOP_DEALS,
     ARTICLE_RESOURCES,
     REVIEWS,
-    KEY_FEATURES
+    KEY_FEATURES,
+    COUNTRY
 };
