@@ -18,7 +18,7 @@ export const ROUTES = [
         name: 'Auth',
         component: AuthLayout,
         childrens: [
-            { path: '/', exact: true, name: 'Login', component: HomeView },
+            { path: '/', exact: true, name: 'Home', component: HomeView },
             { path: '/login', exact: true, name: 'Login', component: LoginView },
             { path: '/register', exact: true, name: 'Register', component: RegisterView, },
             { path: '', redirect: '/', component: Component }

@@ -526,6 +526,24 @@ const styles = () => createStyles({
           },
         }
       }
+    },
+    '& .reviewMainWrap': {
+      display: 'flex',
+      paddingRight: '20px',
+      paddingLeft: '20px',
+      '& .reviewBoxMain': {
+        backgroundColor: '#7575750d !important',
+        padding: 20,
+        '& .reviewContent': {
+          '& p': {
+            color: Theme.palette.primary.dark
+          }
+        }
+      }
+    },
+    '& .keyFeaturesMainWrap': {
+      paddingLeft: '150px',
+      paddingRight: '150px',
     }
 
     // **** end home view css ****

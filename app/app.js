@@ -47,11 +47,9 @@ const render = messages => {
     <Provider store={Store}>
       <ThemeProvider theme={Theme}>
         <LanguageProvider messages={messages}>
-          <ConnectedRouter history={history}>
-            <SnackbarProvider preventDuplicate maxSnack={5}>
-              <App />
-            </SnackbarProvider>
-          </ConnectedRouter>
+          <SnackbarProvider preventDuplicate maxSnack={5}>
+            <App />
+          </SnackbarProvider>
         </LanguageProvider>
       </ThemeProvider>
     </Provider>

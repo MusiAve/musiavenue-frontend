@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { MuiBox, MuiGrid, MuiTypography } from 'components';
 import MuiImageSlider from 'components/ImageSlider';
-import { CARD_DATA, FEATURED_PRODUCTS, PRICING_METHODS_CARD, SLIDER_IMAGES, TOP_DEALS, ARTICLE_RESOURCES } from 'constant';
+import { CARD_DATA, FEATURED_PRODUCTS, PRICING_METHODS_CARD, SLIDER_IMAGES, TOP_DEALS, ARTICLE_RESOURCES, REVIEWS, KEY_FEATURES } from 'constant';
 import { Map } from 'helpers';
 import MenFluteImg from '../../../images/menFlute.jpg';
 import GuiterBoxBg from '../../../images/guiterBoxBg.jpg';
@@ -235,9 +235,53 @@ function HomeView(props) {
             </MuiBox>
 
             {/* REVIEWS */}
-            <MuiBox className="sectionGap"></MuiBox>
+            <MuiBox className="sectionGap reviewMainWrap">
+                <MuiGrid container spacing={2}>
+                    {REVIEWS && Map(REVIEWS, (review, reviewIndex) => (
+                        <MuiGrid item md={3} sm={6} xs={12} key={reviewIndex}>
+                            <MuiBox className="reviewBoxMain">
+                                <MuiBox component='span'>
+                                    {new Array(review.stars).fill('').map((_, i) => (
+                                        <Fragment key={i}>⭐</Fragment>
+                                    ))}
+                                    <MuiBox mx={1.5} component='span'>✪ Verified</MuiBox>
+                                </MuiBox>
+                                <MuiBox my={2} className='reviewContent'>
+                                    <MuiTypography fontSize='18px !important' fontWeight={400}>{review.headText}</MuiTypography>
+                                    <MuiTypography my={2} fontSize='16px !important' fontWeight={300}>{review.longText}</MuiTypography>
+                                    <MuiTypography color="#6c6a6a !important" fontSize='16px !important' fontWeight={400}>
+                                        {review.userName + ', ' + review.timeSince}
+                                    </MuiTypography>
+                                </MuiBox>
+                            </MuiBox>
+                        </MuiGrid>
+                    ))}
+                </MuiGrid>
+            </MuiBox>
             {/* KEY FEATURES */}
-            <></>
+            <MuiBox className="sectionGap keyFeaturesMainWrap">
+                <MuiGrid container spacing={2}>
+                    {KEY_FEATURES && Map(KEY_FEATURES, (feature, featureIndex) => (
+                        <MuiGrid textAlign='center' item md={3} sm={6} xs={12} key={featureIndex}>
+                            <MuiBox className="featureBoxMain">
+                                <img style={{
+                                    width: 'auto', height: 70, marginBottom: 20
+                                }} src={feature.icon} />
+                                <MuiTypography
+                                    color='primary.main'
+                                    fontFamily={`Roboto Slab, serif`}
+                                    my={2} fontWeight={500}
+                                >
+                                    {feature.featureHead}
+                                </MuiTypography>
+                                <MuiTypography fontSize='18px !important' fontWeight={400} color='primary.dark'>
+                                    {feature.featureDesc}
+                                </MuiTypography>
+                            </MuiBox>
+                        </MuiGrid>
+                    ))}
+                </MuiGrid>
+            </MuiBox>
         </MuiBox>
     )
 }

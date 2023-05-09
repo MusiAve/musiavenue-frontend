@@ -3,6 +3,10 @@ import BinaImg from '../images/bina.png';
 import FluteImg from '../images/flute.png';
 import MenTrumpetImg from '../images/menTrumpet.jpg';
 import MenFluteImg from '../images/menFlute.jpg';
+import FastDeliveryImg from '../images/fastDelivery.png';
+import MoneyBackImg from '../images/moneyBack.png';
+import WarrantyImg from '../images/warranty.png';
+import CustomerServiceImg from '../images/customerService.png';
 
 const SLIDER_IMAGES = [
     'http://via.placeholder.com/1050x650/2196F3/FFFFFF/',
@@ -165,4 +169,56 @@ const ARTICLE_RESOURCES = [
     },
 ]
 
-export { IMAGE_FILE_TYPES, SLIDER_IMAGES, CARD_DATA, PRICING_METHODS_CARD, FEATURED_PRODUCTS, TOP_DEALS, ARTICLE_RESOURCES };
+const REVIEWS = [
+    {
+        id: 1,
+        headText: 'Etiam eu est purus.',
+        longText: 'Aenean vel est sapien. Maecenas a laoreet arcu. Aenean sit amet laoreet tellus...',
+        userName: 'SVEN JORDAN',
+        timeSince: '3 DAYS AGO',
+        stars: 5
+    },
+    {
+        id: 2,
+        headText: 'Etiam eu est purus.',
+        longText: 'Aenean vel est sapien. Maecenas a laoreet arcu. Aenean sit amet laoreet tellus...',
+        userName: 'SVEN JORDAN',
+        timeSince: '3 DAYS AGO',
+        stars: 3
+    },
+    {
+        id: 3,
+        headText: 'Etiam eu est purus.',
+        longText: 'Aenean vel est sapien. Maecenas a laoreet arcu. Aenean sit amet laoreet tellus...',
+        userName: 'SVEN JORDAN',
+        timeSince: '3 DAYS AGO',
+        stars: 4
+    },
+    {
+        id: 4,
+        headText: 'Etiam eu est purus.',
+        longText: 'Aenean vel est sapien. Maecenas a laoreet arcu. Aenean sit amet laoreet tellus...',
+        userName: 'SVEN JORDAN',
+        timeSince: '3 DAYS AGO',
+        stars: 2
+    },
+]
+
+const KEY_FEATURES = [
+    { id: 1, featureHead: 'WORLDWIDE SHIPPING', featureDesc: 'Enjoy free delivery on every order.', icon: FastDeliveryImg },
+    { id: 1, featureHead: 'MONEY-BACK GUARANTEE', featureDesc: 'We offer a 30-day money back guarantee.', icon: MoneyBackImg },
+    { id: 1, featureHead: 'HASSLE-FREE WARRANTY', featureDesc: 'If it isn\'t love at first listen, returns are hassle-free.', icon: WarrantyImg },
+    { id: 1, featureHead: 'ONLINE CUSTOMER SERVICE', featureDesc: 'Call our expert for help creating your system.', icon: CustomerServiceImg },
+]
+
+export {
+    IMAGE_FILE_TYPES,
+    SLIDER_IMAGES,
+    CARD_DATA,
+    PRICING_METHODS_CARD,
+    FEATURED_PRODUCTS,
+    TOP_DEALS,
+    ARTICLE_RESOURCES,
+    REVIEWS,
+    KEY_FEATURES
+};
