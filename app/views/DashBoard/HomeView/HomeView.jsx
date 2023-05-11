@@ -7,6 +7,7 @@ import MenFluteImg from '../../../images/menFlute.jpg';
 import GuiterBoxBg from '../../../images/guiterBoxBg.jpg';
 import InstrumentsShopBg from '../../../images/instrumentsShop.jpg';
 import MuiButton from 'components/Buttons';
+import { CheckCircleIcon, StarIcon } from 'helpers/Icons';
 
 function HomeView(props) {
 
@@ -238,18 +239,22 @@ function HomeView(props) {
             <MuiBox className="sectionGap reviewMainWrap">
                 <MuiGrid container spacing={2}>
                     {REVIEWS && Map(REVIEWS, (review, reviewIndex) => (
-                        <MuiGrid item md={3} sm={6} xs={12} key={reviewIndex}>
+                        <MuiGrid item md={3} xs={6} key={reviewIndex} className="reviewBoxMainContainer">
                             <MuiBox className="reviewBoxMain">
-                                <MuiBox component='span'>
-                                    {new Array(review.stars).fill('').map((_, i) => (
-                                        <Fragment key={i}>⭐</Fragment>
-                                    ))}
-                                    <MuiBox mx={1.5} component='span'>✪ Verified</MuiBox>
+                                <MuiBox display='flex'>
+                                    <MuiBox component='span' className="reviewStarBoxWrap">
+                                        {new Array(review.stars).fill('').map((_, i) => (
+                                            <StarIcon key={i} />
+                                        ))}
+                                    </MuiBox>
+                                    <MuiBox mx={1.5} className='greyTxt16px' style={{
+                                        color: 'secondary.contrastText'
+                                    }}><CheckCircleIcon /> Verified</MuiBox>
                                 </MuiBox>
                                 <MuiBox my={2} className='reviewContent'>
-                                    <MuiTypography fontSize='18px !important' fontWeight={400}>{review.headText}</MuiTypography>
-                                    <MuiTypography my={2} fontSize='16px !important' fontWeight={300}>{review.longText}</MuiTypography>
-                                    <MuiTypography color="#6c6a6a !important" fontSize='16px !important' fontWeight={400}>
+                                    <MuiTypography variant='h5'>{review.headText}</MuiTypography>
+                                    <MuiTypography my={2} variant='subtitle2' fontWeight={400}>{review.longText}</MuiTypography>
+                                    <MuiTypography variant='subtitle2' textTransform='uppercase' fontWeight={400}>
                                         {review.userName + ', ' + review.timeSince}
                                     </MuiTypography>
                                 </MuiBox>

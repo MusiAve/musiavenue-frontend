@@ -1,161 +1,161 @@
 *::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
-	background-color: #f5f5f5de;
-	display: none;
+    width: 6px;
+    height: 6px;
+    background-color: #f5f5f5de;
+    /* display: none; */
 }
 
 .MuiFormHelperText-root {
-	margin-left: 0 !important;
-	font-size: 14px !important;
+    margin-left: 0 !important;
+    font-size: 14px !important;
 }
 
 *::-webkit-scrollbar-thumb {
-	background: #ccc;
+    background: #ccc;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	background: #aaadad;
+    background: #aaadad;
 }
 
 body::-webkit-scrollbar-track {
-	background-color: #00000036;
+    background-color: #00000036;
 }
 
 body::-webkit-scrollbar-thumb {
-	background: #a1a1a1;
-	border-radius: 5px;
+    background: #a1a1a1;
+    border-radius: 5px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-	background: #818181;
+    background: #818181;
 }
 
 .animatedMenuBar {
-	width: 25px;
-	height: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	cursor: pointer;
-	transition: transform 330ms ease-out;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 330ms ease-out;
 }
 
 .animatedMenuBar.open {
-	transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .menuBarLine {
-	background-color: #3f30ff;
-	border-radius: 5px;
-	width: 100%;
-	height: 2px;
+    background-color: #3f30ff;
+    border-radius: 5px;
+    width: 100%;
+    height: 2px;
 }
 
 .menuBarLine.half {
-	width: 50%;
+    width: 50%;
 }
 
 .menuBarLine.start {
-	transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-	transform-origin: right;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: right;
 }
 
 .animatedMenuBar.open .menuBarLine.start {
-	transform: rotate(-90deg) translateX(3px);
+    transform: rotate(-90deg) translateX(3px);
 }
 
 .menuBarLine.end {
-	align-self: flex-end;
-	transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-	transform-origin: left;
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
 }
 
 .animatedMenuBar.open .menuBarLine.end {
-	transform: rotate(-90deg) translateX(-3px);
+    transform: rotate(-90deg) translateX(-3px);
 }
 
 @media (min-width: 1200px) {
-	body.sidebarClose {
-		overflow: visible !important;
-		padding-right: 0 !important;
-	}
+    body.sidebarClose {
+        overflow: visible !important;
+        padding-right: 0 !important;
+    }
 }
 
 @media (min-width: 1700px) {
-	*::-webkit-scrollbar {
-		width: 10px;
-		height: 10px;
-	}
+    *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .swal2-container {
-	z-index: 99999 !important;
+    z-index: 99999 !important;
 }
 
 @media print {
-	.noPrintElement {
-		display: none !important;
-	}
+    .noPrintElement {
+        display: none !important;
+    }
 
-	* {
-		box-shadow: none !important;
-		border: none !important;
-		padding: 0 !important;
-		text-align: center !important;
-	}
+    * {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
 
-	html,
-	body {
-		max-width: 350px !important;
-		max-height: 350px !important;
-		overflow: hidden !important;
-		margin: 0 auto !important;
-		text-align: center;
-	}
+    html,
+    body {
+        max-width: 350px !important;
+        max-height: 350px !important;
+        overflow: hidden !important;
+        margin: 0 auto !important;
+        text-align: center;
+    }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	a,
-	button {
-		display: none !important;
-		padding: 0 !important;
-		margin: 0 !important;
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    button {
+        display: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-	.qrCodeWrap,
-	.qrCodeWrap img {
-		max-width: 350px !important;
-		max-height: 350px !important;
-		height: 350px !important;
-		width: 350px !important;
-		margin: 0 auto !important;
-		text-align: center !important;
-	}
+    .qrCodeWrap,
+    .qrCodeWrap img {
+        max-width: 350px !important;
+        max-height: 350px !important;
+        height: 350px !important;
+        width: 350px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
 
-	.MuiDialog-paper {
-		margin: 0 !important;
-		width: 100% !important;
-		max-width: 350px !important;
-		max-height: 350px !important;
-	}
+    .MuiDialog-paper {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        max-height: 350px !important;
+    }
 
-	.MuiDialogContent-root {
-		padding: 0 !important;
-		margin: 0 !important;
-		padding-top: 0 !important;
-	}
+    .MuiDialogContent-root {
+        padding: 0 !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+    }
 
-	.MuiDialogTitle-root {
-		display: none !important;
-	}
+    .MuiDialogTitle-root {
+        display: none !important;
+    }
 
-	.locationTabsMainWrap .MuiTabs-root {
-		display: none;
-	}
+    .locationTabsMainWrap .MuiTabs-root {
+        display: none;
+    }
 }

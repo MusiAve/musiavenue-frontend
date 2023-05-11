@@ -1,6 +1,10 @@
 import { createStyles } from '@mui/styles';
 import Theme from 'theme/Theme';
 
+var roboto = "'Roboto Slab', serif";
+var poppins = 'Poppins, sans-serif';
+var montserrat = "'Montserrat', sans-serif";
+
 const styles = () => createStyles({
   '@global': {
     a: {
@@ -10,7 +14,7 @@ const styles = () => createStyles({
     body: {
       padding: 0,
       margin: 0,
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: poppins,
     },
   },
   headerFooterLayoutMainWrap: {
@@ -29,10 +33,16 @@ const styles = () => createStyles({
       paddingTop: 80,
       paddingBottom: 80,
     },
+    '& .sectionTopGap': {
+      paddingTop: 80,
+    },
+    '& .sectionBottomGap': {
+      paddingBottom: 80,
+    },
     '& .commonBigSctnHdng': {
       color: Theme.palette.primary.main,
       fontSize: 40,
-      fontFamily: "'Roboto Slab', serif",
+      fontFamily: roboto,
       marginBottom: 20,
       textTransform: 'capitalize',
       [Theme.breakpoints.up(1600)]: {
@@ -138,6 +148,13 @@ const styles = () => createStyles({
     },
     '& .greyTxt': {
       color: `${Theme.palette.secondary.contrastText} !important`
+    },
+    '& .greyTxt16px': {
+      color: `${Theme.palette.secondary.contrastText} !important`,
+      fontSize: 16,
+      '& svg': {
+        fontSize: 16,
+      }
     },
     // **** end common css ****
 
@@ -248,6 +265,176 @@ const styles = () => createStyles({
     },
     // **** end bottom header css ****
 
+    // **** start footer css ****
+    '& .footerMainWrap': {
+      backgroundColor: Theme.palette.primary.dark,
+      paddingLeft: 30,
+      paddingRight: 30,
+      color: Theme.palette.primary.contrastText,
+      '& .text-14': {
+        fontSize: 14,
+        [Theme.breakpoints.up(1400)]: {
+          fontSize: 16,
+        },
+        [Theme.breakpoints.up(1700)]: {
+          fontSize: 18,
+        }
+      },
+      '& p': {
+        color: Theme.palette.primary.contrastText,
+      },
+      '& a': {
+        '&:hover': {
+          color: Theme.palette.secondary.light,
+        }
+      },
+      '& .topFooterMainWrap': {
+        paddingBottom: 40,
+      },
+      '& .bottomFooterTopWrap': {
+        padding: '20px 0 40px 0',
+        borderTop: '1px solid #ffffff4d',
+        borderBottom: '1px solid #ffffff4d',
+      },
+      '& .topHeaderLogoSection': {
+        paddingRight: '10%',
+        '& .footerLogoWrap': {
+          display: 'flex',
+          alignItems: 'center',
+          height: 85,
+          '& img': {
+            width: 'auto',
+            maxWidth: '100%'
+          },
+        },
+        '& p': {
+          margin: '20px 0',
+          textAlign: 'justify',
+        },
+        '& h5': {
+          [Theme.breakpoints.up(1700)]: {
+            fontSize: 22,
+          }
+        }
+      },
+      '& .ftrMenuTxt': {
+        fontSize: 15,
+        marginBottom: 15,
+        fontWeight: 400,
+        [Theme.breakpoints.up(1700)]: {
+          fontSize: 18,
+        }
+      },
+      '& .footerMenuList': {
+        '& h5': {
+          color: '#a5a5a5',
+          fontFamily: roboto,
+          fontWeight: 400,
+          margin: '0 0 20px 0',
+          display: 'flex',
+          alignItems: 'center',
+          height: 85,
+          [Theme.breakpoints.up(1700)]: {
+            fontSize: 24,
+          }
+        },
+        '& a': {
+          display: 'block',
+        },
+        '&.storeHoursList': {
+          paddingLeft: '5%',
+          '& .ftrMenuTxt': {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            maxWidth: 240,
+            [Theme.breakpoints.up(1700)]: {
+              maxWidth: 270,
+            },
+            '& span': {
+              fontWeight: 400,
+              fontSize: 14,
+              [Theme.breakpoints.up(1700)]: {
+                fontSize: 16,
+              }
+            }
+          }
+        },
+        '&.contactList': {
+          '& .ftrMenuTxt': {
+            display: 'flex',
+            alignItems: 'center',
+            '& svg': {
+              marginRight: 5,
+            },
+            '&.phone': {
+              fontSize: 25,
+              [Theme.breakpoints.up(1700)]: {
+                fontSize: 30,
+              }
+            }
+          }
+        },
+      },
+      '& .socialListWrap': {
+        marginTop: 40,
+        '& a': {
+          '&:not(:last-child)': {
+            marginRight: 5,
+          },
+          '& img': {
+            width: 35,
+          }
+        }
+      },
+      '& .footerNewsletterMain': {
+        '& .MuiInputBase-root': {
+          borderRadius: 0,
+        },
+        '& input': {
+          color: Theme.palette.primary.contrastText,
+          [Theme.breakpoints.up(1600)]: {
+            padding: 15,
+            fontSize: 20,
+          }
+        },
+        '& button': {
+          boxShadow: 'none',
+          marginTop: 10,
+          '&:hover': {
+            backgroundColor: Theme.palette.primary.contrastText,
+            color: Theme.palette.primary.dark,
+          }
+        }
+      },
+      '& .copyrightSectionWrap': {
+        padding: '20px 0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        '& p': {
+          margin: '0 10px 0 0'
+        }
+      }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // **** end footer css ****
+
     // **** start home view css ****
     '& .homeViewMainWrap': {
       '& .sliderMainWrap': {
@@ -278,7 +465,7 @@ const styles = () => createStyles({
             margin: 0,
             position: 'absolute',
             bottom: 20,
-            fontFamily: "'Roboto Slab', serif",
+            fontFamily: roboto,
             textAlign: 'center',
             width: '100%',
             left: 0,
@@ -569,9 +756,23 @@ const styles = () => createStyles({
       display: 'flex',
       paddingRight: '20px',
       paddingLeft: '20px',
+      '& .reviewBoxMainContainer': {
+        [Theme.breakpoints.down(576)]: {
+          flexBasis: '100%',
+          maxWidth: '100%',
+        },
+      },
       '& .reviewBoxMain': {
         backgroundColor: '#7575750d !important',
         padding: 20,
+        '& .reviewStarBoxWrap': {
+          '& svg': {
+            fontSize: 15,
+            margin: '0 2px 0 0',
+            background: '#00c67c',
+            color: Theme.palette.primary.contrastText,
+          },
+        },
         '& .reviewContent': {
           '& p': {
             color: Theme.palette.primary.dark

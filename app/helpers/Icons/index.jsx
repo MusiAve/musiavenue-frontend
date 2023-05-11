@@ -54,7 +54,10 @@ import {
   Check as CheckIcon,
   PersonOutlineOutlined as PersonOutlineOutlinedIcon,
   FavoriteBorderOutlined as FavoriteBorderOutlinedIcon,
-  ShoppingBasketOutlined as ShoppingBasketOutlinedIcon
+  ShoppingBasketOutlined as ShoppingBasketOutlinedIcon,
+  Star as StarIcon,
+  CheckCircle as CheckCircleIcon,
+  PhoneOutlined as PhoneOutlinedIcon,
 } from '@mui/icons-material';
 
 export {
@@ -113,5 +116,8 @@ export {
   LogoutIcon,
   PersonOutlineOutlinedIcon,
   FavoriteBorderOutlinedIcon,
-  ShoppingBasketOutlinedIcon
+  ShoppingBasketOutlinedIcon,
+  StarIcon,
+  CheckCircleIcon,
+  PhoneOutlinedIcon
 };

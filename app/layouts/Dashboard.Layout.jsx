@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
 import styles from 'global-styles';
 import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
+import { BottomFooter, TopFooter } from 'components/Footer';
 import { MuiBox } from 'components';
 
 function DashboardLayout(props) {
@@ -31,6 +32,11 @@ function DashboardLayout(props) {
           );
         })}
       </Switch>
+
+      <MuiBox className='footerMainWrap sectionTopGap'>
+        <TopFooter />
+        <BottomFooter />
+      </MuiBox>
     </MuiBox>
   );
 }
