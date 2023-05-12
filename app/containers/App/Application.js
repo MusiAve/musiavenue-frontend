@@ -23,7 +23,7 @@ function Application(props) {
 
   const localUser = user.toJS();
 
-  const isAdmin = localUser && localUser.role === 'admin';
+  const isAdmin = Object.entries(localUser).length > 0 && localUser.role === 'admin';
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {

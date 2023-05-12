@@ -65,7 +65,6 @@ const SidebarContent = () => {
                         <MuiListItem
                             key={item.title}
                             button
-                            onClick={() => handleMenuToggle(menuIndex)}
                         >
                             <MuiListItemText primary={item.title} />
                         </MuiListItem>

@@ -31,11 +31,7 @@ function DashboardLayout(props) {
   };
 
   return (
-    <MuiBox className={classes.headerFooterLayoutMainWrap}>
-      <TopHeader />
-      <MiddleHeader />
-      <BottomHeader />
-
+    <MuiBox>
       <Switch>
         {Map(childrens, (route, index) => {
           return (
@@ -50,11 +46,6 @@ function DashboardLayout(props) {
           );
         })}
       </Switch>
-
-      <MuiBox className='footerMainWrap sectionTopGap'>
-        <TopFooter />
-        <BottomFooter />
-      </MuiBox>
     </MuiBox>
   );
 }
