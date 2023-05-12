@@ -58,13 +58,6 @@ export const LoginValidator = yup.object({
     rememberMe: yup.bool().notRequired(),
 });
 
-export const ProfileValidtor = yup.object({
-    firstName: NAME('First name'),
-    lastName: NAME('Last name'),
-    email: EMAIL,
-    phone: PHONE_NUMBER('Phone Number', false),
-});
-
 export const ChangePasswordValidtor = yup.object({
     old_password: PASSWORD('Old password'),
     password: PASSWORD('New password'),

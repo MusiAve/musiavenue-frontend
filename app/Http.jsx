@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { API_URL } from 'configs';
 import { Toast } from 'helpers';
-import Store from 'redux/configureStore';
 
 axios.defaults.baseURL = API_URL;
 axios.interceptors.response.use(

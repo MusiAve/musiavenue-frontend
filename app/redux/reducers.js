@@ -18,7 +18,7 @@ export default function createReducer(injectedReducers = {}) {
     // ui: uiReducer,
     // initval,
     // language: languageProviderReducer,
-    router: connectRouter(history),
+    // router: connectRouter(history),
     ...injectedReducers,
   });
 

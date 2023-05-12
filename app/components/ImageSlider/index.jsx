@@ -29,7 +29,7 @@ function MuiImageSlider(props) {
                 justifyContent: 'center',
                 width: width,
                 height: height,
-                backgroundImage: `url(${images[currentSlide]})`,
+                backgroundImage: `url(https://loremflickr.com/1050/650/music_instruments?lock=${Math.floor(Math.random() * 100)}})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: '400ms ease-in-out',

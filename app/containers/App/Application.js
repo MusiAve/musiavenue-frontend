@@ -19,7 +19,11 @@ import { ROUTES } from 'routes';
 
 function Application(props) {
 
-  const isAuthenticated = false;
+  const { user, isAuthenticated } = props;
+
+  const localUser = user.toJS();
+
+  const isAdmin = localUser && localUser.role === 'admin';
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -30,7 +34,28 @@ function Application(props) {
     <Fragment>
       <BrowserRouter>
         <Switch>
-          {Map(ROUTES, (route, index) => {
+          {isAuthenticated && isAdmin &&
+            Map(Filter(ROUTES, (item) => item.isAdminRoute), (route, index) => {
+              return (
+                <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                  return (
+                    <route.component {...props} {...rProps} childrens={route.childrens} />
+                  );
+                }}
+                />
+              );
+            })}
+          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
+            return (
+              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                return (
+                  <route.component {...props} {...rProps} childrens={route.childrens} />
+                );
+              }}
+              />
+            );
+          })}
+          {!isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
             return (
               <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
                 return (
@@ -49,7 +74,8 @@ function Application(props) {
 const reducer = 'login'
 const mapStateToProps = (state) => {
   return {
-    user: state.getIn([reducer, 'usersLogin'])
+    user: state.getIn([reducer, 'userLogin', 'user']),
+    isAuthenticated: state.getIn([reducer, 'isAuthenticated']),
   }
 }
 

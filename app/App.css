@@ -41,6 +41,12 @@ body::-webkit-scrollbar-thumb:hover {
 	transition: transform 330ms ease-out;
 }
 
+.MuiSelect-select {
+	height: 22px !important;
+	min-height: 0.4375em !important;
+	font-size: 16px !important;
+}
+
 .animatedMenuBar.open {
 	transform: rotate(-45deg);
 }

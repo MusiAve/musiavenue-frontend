@@ -6,6 +6,7 @@ import MuiInputField from 'components/Input';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { IsEmpty } from 'helpers';
 
 function MiddleHeader(props) {
 
@@ -17,7 +18,7 @@ function MiddleHeader(props) {
     const open = Boolean(anchorEl);
 
     const handleClick = (event) => {
-        if (_.isEmpty(user.toJS())) {
+        if (IsEmpty(user.toJS())) {
             history.push('/login');
         } else {
             setAnchorEl(event.currentTarget);
@@ -115,7 +116,7 @@ function MiddleHeader(props) {
 
 const reducer = 'login';
 const mapStateToProps = (state) => ({
-    user: state.getIn([reducer, 'usersLogin'])
+    user: state.getIn([reducer, 'userLogin'])
 })
 
 export default connect(mapStateToProps)(MiddleHeader);

@@ -1,4 +1,4 @@
-import { Filter, Find, FindIndex, ForEach, Map, Some, IndexOf } from './Lodash/Array';
+import { Filter, Find, FindIndex, ForEach, Map, Some, IndexOf, IsEmpty } from './Lodash/Array';
 import { GetValue, HasIn, HasKey, SetValue } from './Lodash/Object';
 import { GetDate, GetDateTime } from './Lodash/String';
 import { LoginValidator, RegisterValidator } from './Validators';
@@ -19,6 +19,7 @@ export {
   SetValue,
   Some,
   IndexOf,
+  IsEmpty,
   Alert,
   LoginValidator,
   RegisterValidator,

@@ -1,3 +1,4 @@
 import BaseService from './Base.Service';
+import AdminAuthService from './AdminService/AuthService';
 
-export { BaseService };
+export { BaseService, AdminAuthService };

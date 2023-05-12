@@ -90,7 +90,7 @@ export function isSuccess(response) {
     if (!response) {
         return;
     }
-    return response.success;
+    return response.status;
 }
 
 export function GetObjectValue(targetObj, sourceObj) {

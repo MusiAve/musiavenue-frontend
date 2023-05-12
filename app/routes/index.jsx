@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import loadable from 'utils/loadable';
-import { AuthLayout, DashboardLayout } from 'layouts';
+import { AuthLayout, DashboardLayout, PrivateLayout } from 'layouts';
 
 // AUTH ROUTES
 const LoginView = loadable(() => import('../views/Auth/Login/LoginView'));
@@ -17,6 +17,7 @@ export const ROUTES = [
         path: '',
         auth: false,
         exact: true,
+        isAdminRoute: false,
         name: 'Auth',
         component: AuthLayout,
         childrens: [
@@ -32,11 +33,24 @@ export const ROUTES = [
         path: '',
         exact: true,
         auth: true,
+        isAdminRoute: false,
+        name: 'Private',
+        component: PrivateLayout,
+        childrens: [
+            { path: '/', exact: true, name: 'Home', component: HomeView },
+            { path: '', redirect: '/', component: Component },
+        ],
+    },
+    {
+        path: '/admin/dashboard',
+        exact: true,
+        auth: true,
+        isAdminRoute: true,
         name: 'Dashboard',
         component: DashboardLayout,
         childrens: [
-            { path: '/dashboard', exact: true, name: 'Dashboard', component: DashBoardView },
-            { path: '', redirect: '/', component: Component },
+            { path: '/admin/dashboard', exact: true, name: 'Dashboard', component: DashBoardView },
+            // { path: '', redirect: '/', component: Component },
         ],
     },
 ];
