@@ -24,6 +24,7 @@ function Application(props) {
   const localUser = user.toJS();
 
   const isAdmin = localUser && localUser.role === 'admin';
+  const isCustomer = localUser && localUser.role === 'customer';
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -45,26 +46,28 @@ function Application(props) {
                 />
               );
             })}
-          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
-            return (
-              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
-                return (
-                  <route.component {...props} {...rProps} childrens={route.childrens} />
-                );
-              }}
-              />
-            );
-          })}
-          {!isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
-            return (
-              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
-                return (
-                  <route.component {...props} {...rProps} childrens={route.childrens} />
-                );
-              }}
-              />
-            );
-          })}
+          {isAuthenticated && (isAdmin || isCustomer) &&
+            Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
+              return (
+                <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                  return (
+                    <route.component {...props} {...rProps} childrens={route.childrens} />
+                  );
+                }}
+                />
+              );
+            })}
+          {!isAuthenticated && (isAdmin || isCustomer) &&
+            Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
+              return (
+                <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                  return (
+                    <route.component {...props} {...rProps} childrens={route.childrens} />
+                  );
+                }}
+                />
+              );
+            })}
         </Switch>
       </BrowserRouter>
     </Fragment>
