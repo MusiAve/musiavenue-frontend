@@ -7,37 +7,40 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
 import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
 import { BottomFooter, TopFooter } from 'components/Footer';
+import { DashBoardView } from 'views';
 
 function AuthLayout(props) {
 
   const { childrens, classes, ...restProps } = props;
 
   return (
-    <MuiBox className={classes.headerFooterLayoutMainWrap}>
-      <TopHeader />
-      <MiddleHeader />
-      <BottomHeader />
+    // <MuiBox className={classes.headerFooterLayoutMainWrap}>
+    //   <TopHeader />
+    //   <MiddleHeader />
+    //   <BottomHeader />
 
-      <Switch>
-        {Map(childrens, (route, index) => {
-          return (
-            <Route
-              key={index}
-              exact={route.exact}
-              path={route.path}
-              render={(rProps) => (!route.redirect ?
-                (<route.component {...restProps} {...rProps} childrens={route.childrens} />) :
-                (<Redirect to={route.redirect || '/'} />))}
-            />
-          );
-        })}
-      </Switch>
+    //   <Switch>
+    //     {Map(childrens, (route, index) => {
+    //       return (
+    //         <Route
+    //           key={index}
+    //           exact={route.exact}
+    //           path={route.path}
+    //           render={(rProps) => (!route.redirect ?
+    //             (<route.component {...restProps} {...rProps} childrens={route.childrens} />) :
+    //             (<Redirect to={route.redirect || '/'} />))}
+    //         />
+    //       );
+    //     })}
+    //   </Switch>
 
-      <MuiBox className='footerMainWrap sectionTopGap'>
-        <TopFooter />
-        <BottomFooter />
-      </MuiBox>
-    </MuiBox>
+    //   <MuiBox className='footerMainWrap sectionTopGap'>
+    //     <TopFooter />
+    //     <BottomFooter />
+    //   </MuiBox>
+    // </MuiBox>
+
+    <DashBoardView />
   );
 }
 

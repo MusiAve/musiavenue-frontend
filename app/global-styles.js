@@ -1,9 +1,12 @@
 import { createStyles } from '@mui/styles';
 import Theme from 'theme/Theme';
 
-var roboto = "'Roboto Slab', serif";
-var poppins = 'Poppins, sans-serif';
-var montserrat = "'Montserrat', sans-serif";
+const roboto = "'Roboto Slab', serif";
+const poppins = 'Poppins, sans-serif';
+const montserrat = "'Montserrat', sans-serif";
+
+const headerHeight = 65;
+const drawerWidth = 270;
 
 const styles = () => createStyles({
   '@global': {
@@ -418,21 +421,6 @@ const styles = () => createStyles({
         }
       }
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // **** end footer css ****
 
     // **** start home view css ****
@@ -838,8 +826,76 @@ const styles = () => createStyles({
 
     // **** end auth page css ****
 
+  },
 
-  }
+
+  // ========================== Start Dashboard Layouts css ==========================
+
+  dashboardLayoutMainWrap: {
+    // **** start common css ****
+    '& .userMenuMainWrap': {
+      '& .MuiAvatar-root': {
+        backgroundColor: Theme.palette.primary.main,
+        color: Theme.palette.primary.contrastText,
+      }
+    },
+    '& .commonDropMenuWrap': {
+      '& ul': {
+        '& li': {
+          padding: '2px 15px',
+          fontSize: 15,
+          color: Theme.palette.primary.dark,
+          '& svg': {
+            color: Theme.palette.primary.dark,
+          }
+        }
+      }
+    },
+
+    // **** end common css ****
+    // **** start sidebar css ****
+    '& .sidebarLogoWraper': {
+      '& img': {
+        width: 'auto',
+        maxWidth: '100%',
+        maxHeight: 55,
+      },
+    },
+    '& .sidebarContentMainWrap': {
+
+    },
+    // **** end sidebar css ****
+
+    // **** start header css ****
+    '& .dashboardHeaderWrap': {
+      backgroundColor: Theme.palette.primary.contrastText,
+      '& .dashHeaderInnerMain': {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        '& .headerLeft': {
+          display: 'flex',
+          alignItems: 'center',
+        },
+        '& .headerRight': {
+          display: 'flex',
+          alignItems: 'center',
+        },
+      },
+    },
+    // **** end header css ****
+
+    // **** start Dashboard Contents css ****
+    '& .dashboardContentMainWrap': {
+
+    },
+    // **** end Dashboard Contents css ****
+  },
+
+
+
+  // ========================== End Dashboard Layouts css ==========================
 });
 
 export default styles;
