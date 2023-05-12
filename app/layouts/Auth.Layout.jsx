@@ -6,6 +6,8 @@ import { MuiBox } from 'components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Map } from 'helpers';
 import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
+import { BottomFooter, TopFooter } from 'components/Footer';
+import { DashBoardView } from 'views';
 
 function AuthLayout(props) {
 
@@ -16,6 +18,7 @@ function AuthLayout(props) {
       <TopHeader />
       <MiddleHeader />
       <BottomHeader />
+
       <Switch>
         {Map(childrens, (route, index) => {
           return (
@@ -30,6 +33,11 @@ function AuthLayout(props) {
           );
         })}
       </Switch>
+
+      <MuiBox className='footerMainWrap sectionTopGap'>
+        <TopFooter />
+        <BottomFooter />
+      </MuiBox>
     </MuiBox>
   );
 }

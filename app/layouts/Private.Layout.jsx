@@ -6,6 +6,7 @@ import { Map } from 'helpers';
 import styles from 'global-styles';
 import { BottomHeader, MiddleHeader, TopHeader } from 'components/Header';
 import { MuiBox } from 'components';
+import { BottomFooter, TopFooter } from 'components/Footer';
 
 function PrivateLayout(props) {
 
@@ -31,6 +32,10 @@ function PrivateLayout(props) {
                     );
                 })}
             </Switch>
+            <MuiBox className='footerMainWrap sectionTopGap'>
+                <TopFooter />
+                <BottomFooter />
+            </MuiBox>
         </MuiBox>
     );
 }

@@ -202,6 +202,14 @@ const REVIEWS = [
         timeSince: '3 DAYS AGO',
         stars: 2
     },
+    {
+        id: 5,
+        headText: 'Etiam eu est purus.',
+        longText: 'Aenean vel est sapien. Maecenas a laoreet arcu. Aenean sit amet laoreet tellus...',
+        userName: 'SVEN JORDAN',
+        timeSince: '3 DAYS AGO',
+        stars: 2
+    },
 ]
 
 const KEY_FEATURES = [
