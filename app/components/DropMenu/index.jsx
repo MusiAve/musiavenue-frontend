@@ -1,14 +1,16 @@
-import React from 'react';
-import { MuiBox } from 'components';
-import Avatar from '@mui/material/Avatar';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { MuiBox, MuiLink } from 'components';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import { MoreHorizIcon, EditIcon, DeleteIcon } from 'helpers/Icons';
 
-function DropMenu() {
+function DropMenu(props) {
+
+    const { editLink, listItems } = props;
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -70,6 +72,12 @@ function DropMenu() {
                             },
                             '& .MuiListItemIcon-root': {
                                 minWidth: 28,
+                            },
+                            '& a': {
+                                color: '#000',
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontWeight: 300,
                             }
                         }
                     },
@@ -77,18 +85,34 @@ function DropMenu() {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <EditIcon fontSize="small" />
-                    </ListItemIcon>
-                    Edit
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <DeleteIcon fontSize="small" />
-                    </ListItemIcon>
-                    Delete
-                </MenuItem>
+                {listItems ? listItems.map((item, index) => (
+                    <MenuItem onClick={handleClose} key={index}>
+                        <MuiLink component={Link} to={item.link}>
+                            <ListItemIcon>
+                                {item.icon}
+                            </ListItemIcon>
+                            {item.label}
+                        </MuiLink>
+                    </MenuItem>
+                )) :
+                    <Fragment>
+                        <MenuItem onClick={handleClose}>
+                            <MuiLink component={Link} to={editLink}>
+                                <ListItemIcon>
+                                    <EditIcon />
+                                </ListItemIcon>
+                                Edit
+                            </MuiLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <ListItemIcon>
+                                <DeleteIcon />
+                            </ListItemIcon>
+                            Delete
+                        </MenuItem>
+                    </Fragment>
+                }
+
             </Menu>
         </MuiBox>
     )

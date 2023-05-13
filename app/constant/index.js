@@ -226,6 +226,13 @@ const COUNTRY = [
     { label: 'South Africa', value: 'southAfrica' },
 ]
 
+const DEMO_LIST = [
+    { label: 'List 1', value: 'list1' },
+    { label: 'List 2', value: 'list2' },
+    { label: 'List 3', value: 'list3' },
+    { label: 'List 4', value: 'list4' },
+]
+
 export {
     IMAGE_FILE_TYPES,
     SLIDER_IMAGES,
@@ -236,5 +243,6 @@ export {
     ARTICLE_RESOURCES,
     REVIEWS,
     KEY_FEATURES,
-    COUNTRY
+    COUNTRY,
+    DEMO_LIST
 };

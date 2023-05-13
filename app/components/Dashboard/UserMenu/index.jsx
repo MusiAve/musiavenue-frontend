@@ -1,5 +1,6 @@
 import React from 'react';
-import { MuiBox } from 'components';
+import { Link } from 'react-router-dom';
+import { MuiBox, MuiLink } from 'components';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -71,6 +72,12 @@ function UserMenu() {
                             },
                             '& .MuiListItemIcon-root': {
                                 minWidth: 30,
+                            },
+                            '& a': {
+                                color: '#000',
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontWeight: 300,
                             }
                         }
                     },
@@ -79,10 +86,12 @@ function UserMenu() {
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
                 <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <AccountCircleIcon fontSize="small" />
-                    </ListItemIcon>
-                    My account
+                    <MuiLink component={Link} to='/admin/profile'>
+                        <ListItemIcon>
+                            <AccountCircleIcon fontSize="small" />
+                        </ListItemIcon>
+                        My account
+                    </MuiLink>
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={handleClose}>

@@ -869,9 +869,18 @@ const styles = () => createStyles({
         '& th, td': {
           color: Theme.palette.primary.dark,
           textAlign: 'left',
-          padding: 12,
+          padding: '10px 15px',
           borderBottom: '1px solid #dedede',
-          fontSize: 16,
+          fontSize: 15,
+          '&:first-child': {
+            paddingLeft: 5,
+          },
+          '&:last-child': {
+            paddingRight: 5,
+          },
+        },
+        '& th': {
+          fontWeight: 500,
         },
         '& tr': {
           '&:last-child': {
@@ -882,7 +891,83 @@ const styles = () => createStyles({
         }
       }
     },
-
+    '& .fieldMainWrap': {
+      '& label': {
+        fontSize: 15,
+        margin: '0 0 8px 5px',
+        display: 'block',
+        fontWeight: 500,
+        color: '#121212',
+      },
+      '& .MuiFormControl-root': {
+        marginBottom: 0,
+      },
+      '& .MuiInputBase-root': {
+        '& input': {
+          fontSize: 16,
+        },
+        '& fieldset': {
+          border: '1px solid #dedede',
+        },
+        '&:hover': {
+          '& input': {
+            fontSize: 16,
+          },
+          '& fieldset': {
+            border: '1px solid #dedede',
+          }
+        },
+        '&.Mui-focused': {
+          '& input': {
+            boxShadow: '0 0 10px #0000000d',
+          },
+          '& fieldset': {
+            border: '1px solid #dedede',
+            borderWidth: 1,
+          }
+        }
+      },
+    },
+    '& .profileAvatarWrap': {
+      '& .MuiTouchRipple-root': {
+        display: 'none'
+      },
+      '& .profileAvatarLabel': {
+        '&:hover': {
+          transition: '0.4s',
+          '& .overlayBox, .removeBtn': {
+            opacity: 1,
+            transition: '0.4s',
+          },
+        }
+      },
+      '& .overlayBox': {
+        position: 'absolute',
+        background: '#0000007d',
+        width: '100%',
+        height: '100%',
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: Theme.palette.primary.contrastText,
+        opacity: 0,
+        transition: '0.4s',
+      },
+      '& .removeBtn': {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        padding: 5,
+        background: Theme.palette.primary.contrastText,
+        color: Theme.palette.error.main,
+        opacity: 0,
+        transition: '0.4s',
+        '& svg': {
+          fontSize: 20,
+        }
+      }
+    },
     // **** end common css ****
     // **** start sidebar css ****
     '& .sidebarLogoWraper': {
