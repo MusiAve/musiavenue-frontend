@@ -83,11 +83,11 @@ function Application(props) {
   );
 }
 
-const reducer = 'login'
 const mapStateToProps = (state) => {
+  console.log('state', state);
   return {
-    user: state.getIn([reducer, 'userLogin', 'user']),
-    isAuthenticated: state.getIn([reducer, 'isAuthenticated']),
+    user: state.login.userLogin,
+    isAuthenticated: state.login.isAuthenticated,
   }
 }
 
