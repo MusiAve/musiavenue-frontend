@@ -19,11 +19,21 @@ import { ROUTES } from 'routes';
 
 function Application(props) {
 
-  const { user, isAuthenticated } = props;
+  const { isAuthenticated } = props;
 
-  const localUser = user.toJS();
+  const user = {
+    firstName: 'soumen',
+    lastName: 'samanta',
+    role: 'admin',
+    email: 'soumen@gmail.com'
+  }
+
+  const localUser = user;
+
+  // const isAdmin = Object.entries(localUser).length > 0 && localUser.role === 'admin';
 
   const isAdmin = Object.entries(localUser).length > 0 && localUser.role === 'admin';
+  const isCustomer = Object.entries(localUser).length > 0 && localUser.role === 'customer';
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -45,26 +55,28 @@ function Application(props) {
                 />
               );
             })}
-          {isAuthenticated && Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
-            return (
-              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
-                return (
-                  <route.component {...props} {...rProps} childrens={route.childrens} />
-                );
-              }}
-              />
-            );
-          })}
-          {!isAuthenticated && Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
-            return (
-              <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
-                return (
-                  <route.component {...props} {...rProps} childrens={route.childrens} />
-                );
-              }}
-              />
-            );
-          })}
+          {isAuthenticated && (isAdmin || isCustomer) &&
+            Map(Filter(ROUTES, (item) => item.auth), (route, index) => {
+              return (
+                <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                  return (
+                    <route.component {...props} {...rProps} childrens={route.childrens} />
+                  );
+                }}
+                />
+              );
+            })}
+          {!isAuthenticated && (isAdmin || isCustomer) &&
+            Map(Filter(ROUTES, (item) => !item.auth), (route, index) => {
+              return (
+                <Route key={index} exact={route.exact} path={route.path} render={(rProps) => {
+                  return (
+                    <route.component {...props} {...rProps} childrens={route.childrens} />
+                  );
+                }}
+                />
+              );
+            })}
         </Switch>
       </BrowserRouter>
     </Fragment>
