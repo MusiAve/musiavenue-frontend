@@ -8,27 +8,31 @@ import {
     ChecklistIcon,
     CategoryIcon
 } from 'helpers/Icons';
+import { useHistory } from 'react-router-dom';
 
 const menuItems = [
-    { title: 'Dashboard', icon: <DashboardIcon /> },
-    { title: 'Category', icon: <CategoryIcon /> },
-    { title: 'Sub Category', icon: <CategoryIcon /> },
-    { title: 'Orders', icon: <ChecklistIcon /> },
-    { title: 'Customers', icon: <PersonIcon /> },
+    { title: 'Dashboard', icon: <DashboardIcon />, path: '/admin/dashboard' },
+    { title: 'Category', icon: <CategoryIcon />, path: '/admin/category' },
+    { title: 'Sub Category', icon: <CategoryIcon />, path: '/admin/sub-category' },
+    { title: 'Orders', icon: <ChecklistIcon />, path: '/admin/orders' },
+    { title: 'Customers', icon: <PersonIcon />, path: '/admin/customers' },
 ];
 
 const SidebarContent = () => {
 
-    const [openMenus, setOpenMenus] = useState([]);
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const history = useHistory();
 
-    const handleMenuToggle = (index) => {
+    const [openMenus, setOpenMenus] = useState([]);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+    const handleMenuToggle = (index, menu) => {
         setSelectedIndex(index);
         if (openMenus.includes(index)) {
             setOpenMenus(openMenus.filter((item) => item !== index));
         } else {
             setOpenMenus([...openMenus, index]);
         }
+        history.push(menu.path || '/')
     };
 
     const renderSubMenu = (subMenu, menuIndex) => {
@@ -51,7 +55,7 @@ const SidebarContent = () => {
         <MuiBox component='ul' className='sidebarListMainWraper'>
             {menuItems.map((menu, index) => (
                 <Fragment key={index}>
-                    <MuiListItem onClick={() => handleMenuToggle(index)} selected={selectedIndex === index}>
+                    <MuiListItem onClick={() => handleMenuToggle(index, menu)} selected={selectedIndex === index}>
                         <MuiListItemIcon>{menu.icon}</MuiListItemIcon>
                         <MuiListItemText primary={menu.title} />
                         {menu.subMenu && <MuiBox>
