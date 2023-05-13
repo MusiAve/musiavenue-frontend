@@ -5,8 +5,8 @@ import { withStyles } from '@mui/styles';
 import styles from 'global-styles';
 import { Link } from 'react-router-dom';
 import Logo from 'images/logo.png';
-import { MuiBox, MuiCssBaseline, MuiDrawer, MuiAppBar, MuiToolbar, MuiList, MuiTypography, MuiIconButton, MuiListItem, MuiListItemButton, MuiListItemIcon, MuiListItemText, MuiLink } from 'components';
-import { FiberManualRecordIcon, ChevronRightIcon, ChevronLeftIcon, MenuIcon } from 'helpers/Icons';
+import { MuiBox, MuiCssBaseline, MuiDrawer, MuiAppBar, MuiToolbar, MuiTypography, MuiIconButton, MuiLink } from 'components';
+import { ChevronRightIcon, ChevronLeftIcon, MenuIcon } from 'helpers/Icons';
 import UserMenu from 'components/Dashboard/UserMenu';
 import SidebarContent from 'components/Dashboard/SidebarContent';
 
@@ -134,18 +134,6 @@ function DashBoardView(props) {
                 </MuiBox>
 
                 <SidebarContent />
-                {/* <MuiList>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <MuiListItem key={text} disablePadding>
-                            <MuiListItemButton>
-                                <MuiListItemIcon>
-                                    {index % 2 === 0 ? <FiberManualRecordIcon /> : <FiberManualRecordIcon />}
-                                </MuiListItemIcon>
-                                <MuiListItemText primary={text} />
-                            </MuiListItemButton>
-                        </MuiListItem>
-                    ))}
-                </MuiList> */}
             </MuiDrawer>
             <Main open={open}>
                 <MuiBox className='dashboardContentMainWrap'>

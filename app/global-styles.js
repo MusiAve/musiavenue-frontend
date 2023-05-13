@@ -832,6 +832,7 @@ const styles = () => createStyles({
   // ========================== Start Dashboard Layouts css ==========================
 
   dashboardLayoutMainWrap: {
+    minHeight: '100vh',
     // **** start common css ****
     '& .userMenuMainWrap': {
       '& .MuiAvatar-root': {
@@ -863,6 +864,51 @@ const styles = () => createStyles({
     },
     '& .sidebarContentMainWrap': {
 
+    },
+    '& .sidebarListMainWraper': {
+      padding: '15px 10px',
+      '& .MuiListItem-root': {
+        padding: '5px 12px',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        marginBottom: 5,
+        '&:hover': {
+          backgroundColor: Theme.palette.secondary.dark,
+        },
+        '&.Mui-selected': {
+          backgroundColor: Theme.palette.primary.main,
+          '& span': {
+            color: Theme.palette.primary.contrastText,
+            fontWeight: 500,
+          },
+          '& .MuiListItemIcon-root': {
+            '& svg': {
+              color: Theme.palette.primary.contrastText,
+            }
+          },
+        },
+        '& .MuiListItemIcon-root': {
+          minWidth: 38,
+          '& svg': {
+            fontSize: 20,
+          }
+        },
+        '& span': {
+          fontSize: 16,
+          color: Theme.palette.primary.dark,
+          fontWeight: 400,
+        },
+      },
+      '& .submenuMainWrap': {
+        '& ul': {
+          paddingLeft: 35,
+          '& li': {
+            '& span': {
+              color: Theme.palette.secondary.contrastText,
+            },
+          }
+        }
+      }
     },
     // **** end sidebar css ****
 

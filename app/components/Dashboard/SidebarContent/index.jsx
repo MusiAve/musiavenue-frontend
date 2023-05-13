@@ -1,53 +1,29 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@mui/styles';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PeopleIcon from '@mui/icons-material/People';
-import SettingsIcon from '@mui/icons-material/Settings';
+import React, { useState, Fragment } from 'react';
 import { MuiBox, MuiListItem, MuiListItemIcon, MuiListItemText, MuiCollapse, MuiList } from 'components';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
-    },
-    menuHeader: {
-        marginBottom: theme.spacing(2),
-    },
-}));
+import {
+    DashboardIcon,
+    ChevronRightIcon,
+    ExpandMoreIcon,
+    PersonIcon,
+    ChecklistIcon,
+    CategoryIcon
+} from 'helpers/Icons';
 
 const menuItems = [
-    {
-        title: 'Dashboard',
-        icon: <DashboardIcon />,
-    },
-    {
-        title: 'Users',
-        icon: <PeopleIcon />,
-        subMenu: [
-            { title: 'All Users' },
-            { title: 'Active Users' },
-            { title: 'Inactive Users' },
-        ],
-    },
-    {
-        title: 'Settings',
-        icon: <SettingsIcon />,
-        subMenu: [
-            { title: 'General Settings' },
-            { title: 'Security' },
-            { title: 'Notifications' },
-        ],
-    },
+    { title: 'Dashboard', icon: <DashboardIcon /> },
+    { title: 'Category', icon: <CategoryIcon /> },
+    { title: 'Sub Category', icon: <CategoryIcon /> },
+    { title: 'Orders', icon: <ChecklistIcon /> },
+    { title: 'Customers', icon: <PersonIcon /> },
 ];
 
 const SidebarContent = () => {
-    const classes = useStyles();
+
     const [openMenus, setOpenMenus] = useState([]);
+    const [selectedIndex, setSelectedIndex] = React.useState(1);
 
     const handleMenuToggle = (index) => {
+        setSelectedIndex(index);
         if (openMenus.includes(index)) {
             setOpenMenus(openMenus.filter((item) => item !== index));
         } else {
@@ -59,13 +35,10 @@ const SidebarContent = () => {
         if (!subMenu) return null;
 
         return (
-            <MuiCollapse in={openMenus.includes(menuIndex)} timeout="auto" unmountOnExit>
-                <MuiList component="div" disablePadding>
+            <MuiCollapse in={openMenus.includes(menuIndex)} timeout="auto" unmountOnExit className='submenuMainWrap'>
+                <MuiList>
                     {subMenu.map((item, index) => (
-                        <MuiListItem
-                            key={item.title}
-                            button
-                        >
+                        <MuiListItem key={item.title} selected={selectedIndex === index}>
                             <MuiListItemText primary={item.title} />
                         </MuiListItem>
                     ))}
@@ -75,10 +48,10 @@ const SidebarContent = () => {
     };
 
     return (
-        <MuiBox className={classes.root}>
+        <MuiBox component='ul' className='sidebarListMainWraper'>
             {menuItems.map((menu, index) => (
-                <MuiBox key={index}>
-                    <MuiListItem button onClick={() => handleMenuToggle(index)}>
+                <Fragment key={index}>
+                    <MuiListItem onClick={() => handleMenuToggle(index)} selected={selectedIndex === index}>
                         <MuiListItemIcon>{menu.icon}</MuiListItemIcon>
                         <MuiListItemText primary={menu.title} />
                         {menu.subMenu && <MuiBox>
@@ -86,7 +59,7 @@ const SidebarContent = () => {
                         </MuiBox>}
                     </MuiListItem>
                     {renderSubMenu(menu.subMenu, index)}
-                </MuiBox>
+                </Fragment>
             ))}
         </MuiBox>
     );

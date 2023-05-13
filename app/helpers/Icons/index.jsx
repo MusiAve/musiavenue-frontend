@@ -58,6 +58,8 @@ import {
   Star as StarIcon,
   CheckCircle as CheckCircleIcon,
   PhoneOutlined as PhoneOutlinedIcon,
+  Category as CategoryIcon,
+  Checklist as ChecklistIcon,
 } from '@mui/icons-material';
 
 export {
@@ -119,5 +121,7 @@ export {
   ShoppingBasketOutlinedIcon,
   StarIcon,
   CheckCircleIcon,
-  PhoneOutlinedIcon
+  PhoneOutlinedIcon,
+  CategoryIcon,
+  ChecklistIcon,
 };
