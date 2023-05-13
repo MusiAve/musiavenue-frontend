@@ -1,23 +1,55 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { styled, useTheme } from '@mui/material/styles';
-import { withStyles } from '@mui/styles';
 import styles from 'global-styles';
-import { MuiBox, MuiAppBar, MuiTypography } from 'components';
+import { MuiBox, MuiTypography } from 'components';
+import MuiButton from 'components/Buttons';
+import DropMenu from 'components/DropMenu';
 
-function ProductView(props) {
-
-    const { classes } = props;
+function ProductView() {
 
     return (
-        <MuiBox className={classes.dashboardLayoutMainWrap} sx={{ display: 'flex' }}>
-            <MuiTypography>Products</MuiTypography>
+        <MuiBox className='tableBtnHeadingLayoutWrap'>
+            <MuiBox display='flex' alignItems='center' justifyContent='space-between' mb={3}>
+                <MuiTypography variant='h6' color='primary.dark'>Product List</MuiTypography>
+                <MuiButton variant='contained' className='primaryBtnWrap'>Add Product</MuiButton>
+            </MuiBox>
+            <MuiBox className='whiteBoxWrap'>
+                <MuiBox className='commonTableWrap'>
+                    <MuiBox component='table'>
+                        <MuiBox component='thead'>
+                            <MuiBox component='tr'>
+                                <MuiBox component='th'>Name</MuiBox>
+                                <MuiBox component='th'>Category</MuiBox>
+                                <MuiBox component='th'>Price</MuiBox>
+                                <MuiBox component='th'>Action</MuiBox>
+                            </MuiBox>
+                        </MuiBox>
+
+                        <MuiBox component='tbody'>
+                            <MuiBox component='tr'>
+                                <MuiBox component='td'>Rerum consectetur modi impedit</MuiBox>
+                                <MuiBox component='td'>Guiter</MuiBox>
+                                <MuiBox component='td'>267</MuiBox>
+                                <MuiBox component='td'><DropMenu /></MuiBox>
+                            </MuiBox>
+                            <MuiBox component='tr'>
+                                <MuiBox component='td'>Rerum consectetur modi impedit</MuiBox>
+                                <MuiBox component='td'>Flute</MuiBox>
+                                <MuiBox component='td'>267</MuiBox>
+                                <MuiBox component='td'><DropMenu /></MuiBox>
+                            </MuiBox>
+                            <MuiBox component='tr'>
+                                <MuiBox component='td'>Rerum consectetur modi impedit</MuiBox>
+                                <MuiBox component='td'>Guiter</MuiBox>
+                                <MuiBox component='td'>267</MuiBox>
+                                <MuiBox component='td'><DropMenu /></MuiBox>
+                            </MuiBox>
+                        </MuiBox>
+                    </MuiBox>
+                </MuiBox>
+            </MuiBox>
         </MuiBox>
     );
 }
 
-ProductView.propTypes = {
-    classes: PropTypes.any,
-};
-
-export default withStyles(styles)(ProductView);
+export default ProductView;
