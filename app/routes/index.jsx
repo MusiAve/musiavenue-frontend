@@ -10,6 +10,7 @@ const ForgetPasswordView = loadable(() => import('../views/Auth/ForgetPassword/F
 // DASHBOARD ROUTES
 const DashBoardView = loadable(() => import('../views/DashBoard/DashBoard/DashBoardView'));
 const CategoryView = loadable(() => import('../views/DashBoard/Categories/CategoryView'));
+const ProductView = loadable(() => import('../views/DashBoard/Product/ProductView'));
 const SubCategoryView = loadable(() => import('../views/DashBoard/SubCategory/SubCategoryView'));
 const OrderView = loadable(() => import('../views/DashBoard/Orders/OrderView'));
 const CustomerView = loadable(() => import('../views/DashBoard/Customers/CustomerView'));
@@ -54,6 +55,7 @@ export const ROUTES = [
         component: DashboardLayout,
         childrens: [
             { path: '/admin/dashboard', exact: true, name: 'Dashboard', component: DashBoardView },
+            { path: '/admin/product', exact: true, name: 'Product', component: ProductView },
             { path: '/admin/category', exact: true, name: 'Categories', component: CategoryView },
             { path: '/admin/sub-category', exact: true, name: 'Sub Categories', component: SubCategoryView },
             { path: '/admin/orders', exact: true, name: 'Orders', component: OrderView },

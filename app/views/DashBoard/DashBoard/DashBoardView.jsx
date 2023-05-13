@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { styled, useTheme } from '@mui/material/styles';
 import { withStyles } from '@mui/styles';
 import styles from 'global-styles';
-import { MuiBox, MuiAppBar, MuiTypography } from 'components';
+import { MuiBox, MuiGrid, MuiTypography } from 'components';
+import {
+    PersonIcon,
+    RedeemIcon
+} from 'helpers/Icons';
+
+const totalOverview = [
+    { title: 'Total Sales', number: 2545, icon: RedeemIcon },
+]
 
 function DashBoardView(props) {
 
-    const { classes } = props;
-
     return (
-        <MuiBox sx={{ display: 'flex' }}>
-            <MuiTypography paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                sapien faucibus et molestie ac.
-            </MuiTypography>
+        <MuiBox className='overviewMainWrap'>
+            <MuiGrid container spacing={2}>
+                <MuiGrid item md={3} sm={6} xs={12}>
+                    <MuiBox>
+                        <MuiTypography variant='h6'>Total Sales</MuiTypography>
+                    </MuiBox>
+                </MuiGrid>
+            </MuiGrid>
         </MuiBox>
     );
 }

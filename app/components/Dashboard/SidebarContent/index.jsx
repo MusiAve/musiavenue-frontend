@@ -13,6 +13,7 @@ import { useHistory } from 'react-router-dom';
 
 const menuItems = [
     { title: 'Dashboard', icon: <DashboardIcon />, path: '/admin/dashboard' },
+    { title: 'Product', icon: <RedeemIcon />, path: '/admin/product' },
     { title: 'Category', icon: <CategoryIcon />, path: '/admin/category' },
     { title: 'Sub Category', icon: <CategoryIcon />, path: '/admin/sub-category' },
     { title: 'Orders', icon: <ChecklistIcon />, path: '/admin/orders' },
