@@ -833,6 +833,8 @@ const styles = () => createStyles({
 
   dashboardLayoutMainWrap: {
     minHeight: '100vh',
+    width: '100%',
+    backgroundColor: '#f3f6f9',
     // **** start common css ****
     '& .userMenuMainWrap': {
       '& .MuiAvatar-root': {

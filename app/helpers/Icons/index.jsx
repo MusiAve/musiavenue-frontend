@@ -60,6 +60,7 @@ import {
   PhoneOutlined as PhoneOutlinedIcon,
   Category as CategoryIcon,
   Checklist as ChecklistIcon,
+  Redeem as RedeemIcon,
 } from '@mui/icons-material';
 
 export {
@@ -124,4 +125,5 @@ export {
   PhoneOutlinedIcon,
   CategoryIcon,
   ChecklistIcon,
+  RedeemIcon,
 };

@@ -6,11 +6,13 @@ import {
     ExpandMoreIcon,
     PersonIcon,
     ChecklistIcon,
-    CategoryIcon
+    CategoryIcon,
+    RedeemIcon
 } from 'helpers/Icons';
 
 const menuItems = [
     { title: 'Dashboard', icon: <DashboardIcon /> },
+    { title: 'Product', icon: <RedeemIcon /> },
     { title: 'Category', icon: <CategoryIcon /> },
     { title: 'Sub Category', icon: <CategoryIcon /> },
     { title: 'Orders', icon: <ChecklistIcon /> },
