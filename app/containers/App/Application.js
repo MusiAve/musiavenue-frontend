@@ -19,21 +19,21 @@ import { ROUTES } from 'routes';
 
 function Application(props) {
 
-  const { isAuthenticated } = props;
+  const { user, isAuthenticated } = props;
 
-  const user = {
-    firstName: 'soumen',
-    lastName: 'samanta',
-    role: 'admin',
-    email: 'soumen@gmail.com'
-  }
+  // const user = {
+  //   firstName: 'soumen',
+  //   lastName: 'samanta',
+  //   role: 'admin',
+  //   email: 'soumen@gmail.com'
+  // }
 
-  const localUser = user;
+  // const localUser = user;
 
   // const isAdmin = Object.entries(localUser).length > 0 && localUser.role === 'admin';
 
-  const isAdmin = Object.entries(localUser).length > 0 && localUser.role === 'admin';
-  const isCustomer = Object.entries(localUser).length > 0 && localUser.role === 'customer';
+  const isAdmin = Object.entries(user).length > 0 && user.role === 'admin';
+  const isCustomer = Object.entries(user).length > 0 && user.role === 'customer';
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   useEffect(() => {
@@ -84,9 +84,8 @@ function Application(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   return {
-    user: state.login.userLogin,
+    user: state.login.userLogin.user,
     isAuthenticated: state.login.isAuthenticated,
   }
 }

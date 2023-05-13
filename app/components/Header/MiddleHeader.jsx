@@ -115,7 +115,7 @@ function MiddleHeader(props) {
 }
 
 const mapStateToProps = (state) => ({
-    user: state.login.userLogin,
+    user: state.login.userLogin.user,
 })
 
 export default connect(mapStateToProps)(MiddleHeader);
