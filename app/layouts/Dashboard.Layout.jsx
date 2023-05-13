@@ -1,14 +1,13 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@mui/styles';
-import { styled, useTheme } from '@mui/material/styles';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import { Map } from 'helpers';
+import { styled, useTheme } from '@mui/material/styles';
 import styles from 'global-styles';
-import { Link } from 'react-router-dom';
-import Logo from 'images/logo.png';
 import { MuiBox, MuiCssBaseline, MuiDrawer, MuiAppBar, MuiToolbar, MuiTypography, MuiIconButton, MuiLink } from 'components';
-import { ChevronRightIcon, ChevronLeftIcon, MenuIcon } from 'helpers/Icons';
+import { ChevronLeftIcon, ChevronRightIcon, MenuIcon } from 'helpers/Icons';
+import Logo from 'images/logo.png';
 import UserMenu from 'components/Dashboard/UserMenu';
 import SidebarContent from 'components/Dashboard/SidebarContent';
 
@@ -23,14 +22,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: 0,
+    marginLeft: `-${drawerWidth}px`,
     ...(open && {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: `${drawerWidth}px`,
-      transition: theme.transitions.create(['margin', 'width'], {
+      transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
+      marginLeft: 0,
     }),
   }),
 );
@@ -59,23 +57,31 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: '5px 10px',
   ...theme.mixins.toolbar,
 }));
+
 function DashboardLayout(props) {
 
   const { childrens, classes, container, ...restProps } = props;
 
   const theme = useTheme();
-  const [open, setOpen] = useState(true);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  const [state, setState] = useState({
+    open: true
+  })
 
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const { open } = state;
+
+  const handleDrawerToggle = () => {
+    setState((prev) => ({ ...prev, open: !state.open }));
+    if (open === false) {
+      document.body.classList.add('sidebarClose');
+    } else {
+      document.body.classList.remove('sidebarClose');
+    }
   };
 
   return (
-    <MuiBox className={classes.dashboardLayoutMainWrap}>
+
+    <MuiBox className={classes.dashboardLayoutMainWrap} sx={{ display: 'flex' }}>
       <MuiCssBaseline />
       <MuiAppBar position="fixed" open={open} className={`dashboardHeaderWrap ${open && 'sidebarClosed'}`}
         sx={{
@@ -95,7 +101,7 @@ function DashboardLayout(props) {
               <MuiIconButton
                 color="main"
                 aria-label="open drawer"
-                onClick={handleDrawerOpen}
+                onClick={handleDrawerToggle}
                 edge="start"
                 sx={{ mr: 2, ...(open && { display: 'none' }) }}
               >
@@ -129,7 +135,7 @@ function DashboardLayout(props) {
             <MuiLink component={Link} to='/'>
               <img src={Logo} />
             </MuiLink>
-            <MuiIconButton onClick={handleDrawerClose}>
+            <MuiIconButton onClick={handleDrawerToggle}>
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </MuiIconButton>
           </DrawerHeader>

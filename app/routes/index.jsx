@@ -9,6 +9,10 @@ const ForgetPasswordView = loadable(() => import('../views/Auth/ForgetPassword/F
 
 // DASHBOARD ROUTES
 const DashBoardView = loadable(() => import('../views/DashBoard/DashBoard/DashBoardView'));
+const CategoryView = loadable(() => import('../views/DashBoard/Categories/CategoryView'));
+const SubCategoryView = loadable(() => import('../views/DashBoard/SubCategory/SubCategoryView'));
+const OrderView = loadable(() => import('../views/DashBoard/Orders/OrderView'));
+const CustomerView = loadable(() => import('../views/DashBoard/Customers/CustomerView'));
 const HomeView = loadable(() => import('../views/DashBoard/HomeView/HomeView'));
 const AboutUsView = loadable(() => import('../views/DashBoard/AboutUs/AboutUsView'));
 
@@ -42,7 +46,7 @@ export const ROUTES = [
         ],
     },
     {
-        path: '/admin/dashboard',
+        path: '/admin/:type',
         exact: true,
         auth: true,
         isAdminRoute: true,
@@ -50,7 +54,11 @@ export const ROUTES = [
         component: DashboardLayout,
         childrens: [
             { path: '/admin/dashboard', exact: true, name: 'Dashboard', component: DashBoardView },
-            // { path: '', redirect: '/', component: Component },
+            { path: '/admin/category', exact: true, name: 'Categories', component: CategoryView },
+            { path: '/admin/sub-category', exact: true, name: 'Sub Categories', component: SubCategoryView },
+            { path: '/admin/orders', exact: true, name: 'Orders', component: OrderView },
+            { path: '/admin/customers', exact: true, name: 'Customers', component: CustomerView },
+            { path: '', redirect: '/', component: Component },
         ],
     },
 ];
