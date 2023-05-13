@@ -46,11 +46,9 @@ const render = messages => {
   root.render(
     <Provider store={Store}>
       <ThemeProvider theme={Theme}>
-        <LanguageProvider messages={messages}>
-          <SnackbarProvider preventDuplicate maxSnack={5}>
-            <App />
-          </SnackbarProvider>
-        </LanguageProvider>
+        <SnackbarProvider preventDuplicate maxSnack={5}>
+          <App />
+        </SnackbarProvider>
       </ThemeProvider>
     </Provider>
   );

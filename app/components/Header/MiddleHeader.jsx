@@ -18,7 +18,7 @@ function MiddleHeader(props) {
     const open = Boolean(anchorEl);
 
     const handleClick = (event) => {
-        if (IsEmpty(user.toJS())) {
+        if (IsEmpty(user)) {
             history.push('/login');
         } else {
             setAnchorEl(event.currentTarget);
@@ -114,9 +114,8 @@ function MiddleHeader(props) {
     )
 }
 
-const reducer = 'login';
 const mapStateToProps = (state) => ({
-    user: state.getIn([reducer, 'userLogin'])
+    user: state.login.userLogin,
 })
 
 export default connect(mapStateToProps)(MiddleHeader);

@@ -2,8 +2,8 @@
  * Combine all reducers in this file and export the combined reducers.
  */
 // import { reducer as form } from 'redux-form/immutable';
-import { combineReducers } from 'redux-immutable';
 import { connectRouter } from 'connected-react-router/immutable';
+import { combineReducers } from 'redux'
 import history from 'utils/history';
 
 import login from './modules/login';
