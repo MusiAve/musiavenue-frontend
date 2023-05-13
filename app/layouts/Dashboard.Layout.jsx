@@ -24,6 +24,8 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     }),
     marginLeft: `-${drawerWidth}px`,
     ...(open && {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: `${drawerWidth}px`,
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
@@ -109,9 +111,6 @@ function DashboardLayout(props) {
               </MuiIconButton>
             </MuiBox>
             <MuiBox className='headerRight'>
-              <MuiTypography variant="h6" noWrap component="div">
-                Persistent drawer
-              </MuiTypography>
               <UserMenu />
             </MuiBox>
           </MuiBox>

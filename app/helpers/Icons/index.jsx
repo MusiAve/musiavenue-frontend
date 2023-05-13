@@ -61,6 +61,7 @@ import {
   Category as CategoryIcon,
   Checklist as ChecklistIcon,
   Redeem as RedeemIcon,
+  KeyboardReturn as KeyboardReturnIcon,
 } from '@mui/icons-material';
 
 export {
@@ -126,4 +127,5 @@ export {
   CategoryIcon,
   ChecklistIcon,
   RedeemIcon,
+  KeyboardReturnIcon,
 };

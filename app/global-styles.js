@@ -854,6 +854,34 @@ const styles = () => createStyles({
         }
       }
     },
+    '& .whiteBoxWrap': {
+      background: Theme.palette.primary.contrastText,
+      padding: 20,
+      borderRadius: '5px',
+      boxShadow: '0 4px 16px 0 rgb(0 0 0 / 4%)',
+      marginBottom: 15,
+    },
+    '& .commonTableWrap': {
+      overflowY: 'auto',
+      '& table': {
+        width: 'max-content',
+        minWidth: '100%',
+        '& th, td': {
+          color: Theme.palette.primary.dark,
+          textAlign: 'left',
+          padding: 12,
+          borderBottom: '1px solid #dedede',
+          fontSize: 16,
+        },
+        '& tr': {
+          '&:last-child': {
+            '& td': {
+              borderBottom: 'none',
+            },
+          }
+        }
+      }
+    },
 
     // **** end common css ****
     // **** start sidebar css ****
@@ -863,9 +891,6 @@ const styles = () => createStyles({
         maxWidth: '100%',
         maxHeight: 55,
       },
-    },
-    '& .sidebarContentMainWrap': {
-
     },
     '& .sidebarListMainWraper': {
       padding: '15px 10px',
@@ -936,7 +961,31 @@ const styles = () => createStyles({
 
     // **** start Dashboard Contents css ****
     '& .dashboardContentMainWrap': {
-
+      '& .overviewMainWrap': {
+        '& .overviewCardWrap': {
+          '& .iconWrap': {
+            '& svg': {
+              fontSize: 32,
+              marginRight: 10,
+              borderRadius: '50%',
+              padding: 5,
+              color: '#343434',
+            }
+          },
+          '& h6': {
+            fontSize: 16,
+            fontWeight: 400,
+            color: Theme.palette.secondary.contrastText,
+          },
+          '& h4': {
+            fontSize: 25,
+            fontWeight: 600,
+            margin: '12px 0 0 0',
+            color: Theme.palette.primary.dark,
+            fontFamily: montserrat
+          },
+        },
+      },
     },
     // **** end Dashboard Contents css ****
   },
